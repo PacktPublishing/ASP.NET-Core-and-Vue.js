@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "kxga9uUVdjYLVBceMCsaO6sUvQrjweEeqra3Y3t9Fo90I92wNhADDhEy43R4C7apbRFQF4p5arfyg6KdaZYPFA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 4\\Finish\\Travel\\src\\presentation\\Travel.WebApi\\Travel.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\devduldu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\devduldu\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\devduldu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
+    "C:\\Users\\devduldu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
+    "C:\\Users\\devduldu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
+    "C:\\Users\\devduldu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

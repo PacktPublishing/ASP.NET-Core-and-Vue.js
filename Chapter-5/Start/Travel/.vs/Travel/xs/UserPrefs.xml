@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{5D276EAC-CD24-4D97-8CA5-B9B710B748CE}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Travel" expanded="True" selected="True">
+            <Node name="src" expanded="True">
+              <Node name="core" expanded="True" />
+              <Node name="infrastructure" expanded="True" />
+              <Node name="presentation" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.src.presentation.Travel.WebApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

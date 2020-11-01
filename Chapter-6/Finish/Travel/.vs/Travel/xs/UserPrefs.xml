@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{5D276EAC-CD24-4D97-8CA5-B9B710B748CE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/core/Travel.Domain/Entities/TourList.cs">
+    <Files>
+      <File FileName="src/core/Travel.Domain/Entities/TourPackage.cs" Line="10" Column="36" />
+      <File FileName="src/core/Travel.Domain/Entities/TourList.cs" Line="20" Column="1" />
+      <File FileName="src/core/Travel.Domain/Enums/Currency.cs" Line="12" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Travel" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="core" expanded="True">
+                <Node name="Travel.Domain" expanded="True">
+                  <Node name="Entities" expanded="True">
+                    <Node name="TourList.cs" selected="True" />
+                  </Node>
+                  <Node name="Enums" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="infrastructure" expanded="True" />
+              <Node name="presentation" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.src.presentation.Travel.WebApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

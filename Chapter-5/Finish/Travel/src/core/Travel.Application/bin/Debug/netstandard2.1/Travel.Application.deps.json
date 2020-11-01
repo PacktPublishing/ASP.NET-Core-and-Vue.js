@@ -1,0 +1,37 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Travel.Application/1.0.0": {
+        "dependencies": {
+          "Travel.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Travel.Application.dll": {}
+        }
+      },
+      "Travel.Domain/1.0.0": {
+        "runtime": {
+          "Travel.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Travel.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Travel.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

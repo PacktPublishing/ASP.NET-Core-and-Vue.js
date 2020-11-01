@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Travel.Shared/1.0.0": {
+        "dependencies": {
+          "Travel.Application": "1.0.0"
+        },
+        "runtime": {
+          "Travel.Shared.dll": {}
+        }
+      },
+      "Travel.Application/1.0.0": {
+        "dependencies": {
+          "Travel.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Travel.Application.dll": {}
+        }
+      },
+      "Travel.Domain/1.0.0": {
+        "runtime": {
+          "Travel.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Travel.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Travel.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Travel.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

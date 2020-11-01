@@ -1,0 +1,68 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/presentation/Travel.WebApi/Travel.WebApi.csproj",
+    "projectName": "Travel.WebApi",
+    "projectPath": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/presentation/Travel.WebApi/Travel.WebApi.csproj",
+    "outputPath": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/presentation/Travel.WebApi/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "net50"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp5.0": {
+        "projectReferences": {
+          "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/core/Travel.Application/Travel.Application.csproj": {
+            "projectPath": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/core/Travel.Application/Travel.Application.csproj"
+          },
+          "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/infrastructure/Travel.Data/Travel.Data.csproj": {
+            "projectPath": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/infrastructure/Travel.Data/Travel.Data.csproj"
+          },
+          "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/infrastructure/Travel.Shared/Travel.Shared.csproj": {
+            "projectPath": "/Users/devlinduldulao/Dropbox/A Books/Packt/Chapter - 4/Finish/Travel/src/infrastructure/Travel.Shared/Travel.Shared.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp5.0": {
+      "dependencies": {
+        "Swashbuckle.AspNetCore": {
+          "target": "Package",
+          "version": "[5.5.1, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.AspNetCore.App": {
+          "privateAssets": "none"
+        },
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100-rc.2.20479.15/RuntimeIdentifierGraph.json"
+    }
+  }
+}

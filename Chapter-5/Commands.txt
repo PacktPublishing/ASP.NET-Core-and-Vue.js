@@ -1,0 +1,28 @@
+in commandline (location does not matter):
+dotnet tool install --global dotnet-ef
+
+
+in WebApi project:
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+
+in Data project:
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+
+
+in Data project:
+dotnet ef migrations add InitialCreate --startup-project ../../presentation/Travel.WebApi/
+dotnet ef database update --startup-project ../../presentation/Travel.WebApi/
+
+
+in WebApi project:
+dotnet run
+
+
+Swagger Testing
+
+{
+  "city": "Oslo",
+  "country": "Norway",
+  "about": "Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum."
+}

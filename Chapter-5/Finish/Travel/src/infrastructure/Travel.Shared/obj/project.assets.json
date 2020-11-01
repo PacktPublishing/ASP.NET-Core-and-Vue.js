@@ -1,0 +1,115 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Travel.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Travel.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Travel.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Travel.Application.dll": {}
+        }
+      },
+      "Travel.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Travel.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Travel.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Travel.Application/1.0.0": {
+      "type": "project",
+      "path": "../../core/Travel.Application/Travel.Application.csproj",
+      "msbuildProject": "../../core/Travel.Application/Travel.Application.csproj"
+    },
+    "Travel.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../core/Travel.Domain/Travel.Domain.csproj",
+      "msbuildProject": "../../core/Travel.Domain/Travel.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Travel.Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\devduldu\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 5\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
+      "projectName": "Travel.Shared",
+      "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 5\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
+      "packagesPath": "C:\\Users\\devduldu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 5\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\devduldu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 5\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj": {
+              "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 5\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
