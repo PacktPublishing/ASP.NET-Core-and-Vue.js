@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj": {}
+    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj": {
+    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj",
+        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj",
         "projectName": "Travel.Application",
-        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj",
+        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj",
         "packagesPath": "C:\\Users\\devduldu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\obj\\",
+        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -33,8 +33,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
-                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj"
+              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
+                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
+    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj",
         "projectName": "Travel.Domain",
-        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj",
+        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj",
         "packagesPath": "C:\\Users\\devduldu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\obj\\",
+        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -160,14 +160,14 @@
         }
       }
     },
-    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj": {
+    "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
         "projectName": "Travel.Shared",
-        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
+        "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\Travel.Shared.csproj",
         "packagesPath": "C:\\Users\\devduldu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\obj\\",
+        "outputPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\infrastructure\\Travel.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -189,11 +189,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj": {
-                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj"
+              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj": {
+                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Application\\Travel.Application.csproj"
               },
-              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
-                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\Chapter - 6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj"
+              "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj": {
+                "projectPath": "C:\\Users\\devduldu\\Dropbox\\A Books\\Packt\\ASP.NET-Core-5-and-Vue.js-3-Second-Edition\\Chapter-6\\Finish\\Travel\\src\\core\\Travel.Domain\\Travel.Domain.csproj"
               }
             }
           }

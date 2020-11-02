@@ -39,12 +39,5 @@ namespace Travel.Application.TourPackages.Commands.UpdateTourPackage
 
       return Unit.Value;
     }
-
-    public async Task<bool> BeUniqueTitle(UpdateTourPackageCommand model, string name, CancellationToken cancellationToken)
-    {
-      return await _context.TourPackages
-        .Where(l => l.Id != model.Id)
-        .AllAsync(l => l.Name != name);
-    }
   }
 }
