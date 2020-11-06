@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Travel.Application.Common.Mappings;
-using Travel.Application.TourLists.Queries.GetTours;
 using Travel.Domain.Entities;
 
 namespace Travel.Application.Dtos.Tour

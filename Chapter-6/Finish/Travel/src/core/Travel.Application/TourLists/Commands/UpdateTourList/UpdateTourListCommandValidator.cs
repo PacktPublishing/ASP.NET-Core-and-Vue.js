@@ -1,8 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Travel.Application.Common.Interfaces;
 
 namespace Travel.Application.TourLists.Commands.UpdateTourList

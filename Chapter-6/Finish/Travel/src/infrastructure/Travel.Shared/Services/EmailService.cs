@@ -1,10 +1,8 @@
-﻿
-
-using System.Threading.Tasks;
+﻿using MimeKit;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using MimeKit;
+using System.Threading.Tasks;
 using Travel.Application.Common.Exceptions;
 using Travel.Application.Common.Interfaces;
 using Travel.Application.Dtos.Email;
@@ -14,13 +12,13 @@ namespace Travel.Shared.Services
 {
   public class EmailService : IEmailService
   {
-    public MailSettings _mailSettings { get; }
-    public ILogger<EmailService> _logger { get; }
+    private MailSettings MailSettings { get; }
+    private ILogger<EmailService> Logger { get; }
 
     public EmailService(IOptions<MailSettings> mailSettings, ILogger<EmailService> logger)
     {
-      _mailSettings = mailSettings.Value;
-      _logger = logger;
+      MailSettings = mailSettings.Value;
+      Logger = logger;
     }
 
     public async Task SendAsync(EmailDto request)
@@ -28,22 +26,19 @@ namespace Travel.Shared.Services
       try
       {
         // create message
-        var email = new MimeMessage();
-        email.Sender = MailboxAddress.Parse(request.From ?? _mailSettings.EmailFrom);
+        var email = new MimeMessage { Sender = MailboxAddress.Parse(request.From ?? MailSettings.EmailFrom) };
         email.To.Add(MailboxAddress.Parse(request.To));
         email.Subject = request.Subject;
-        var builder = new BodyBuilder();
-        builder.HtmlBody = request.Body;
+        var builder = new BodyBuilder { HtmlBody = request.Body };
         email.Body = builder.ToMessageBody();
+
         using var smtp = new SmtpClient();
-
         await smtp.SendAsync(email);
-
-        smtp.Disconnect(true);
+        await smtp.DisconnectAsync(true);
       }
       catch (System.Exception ex)
       {
-        _logger.LogError(ex.Message, ex);
+        Logger.LogError(ex.Message, ex);
         throw new ApiException(ex.Message);
       }
     }

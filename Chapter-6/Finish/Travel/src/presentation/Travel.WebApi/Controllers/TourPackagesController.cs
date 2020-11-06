@@ -21,9 +21,7 @@ namespace Travel.WebApi.Controllers
     public async Task<ActionResult> Update(int id, UpdateTourPackageCommand command)
     {
       if (id != command.Id)
-      {
         return BadRequest();
-      }
 
       await Mediator.Send(command);
 
@@ -34,9 +32,7 @@ namespace Travel.WebApi.Controllers
     public async Task<ActionResult> UpdateItemDetails(int id, UpdateTourPackageDetailCommand command)
     {
       if (id != command.Id)
-      {
         return BadRequest();
-      }
 
       await Mediator.Send(command);
 

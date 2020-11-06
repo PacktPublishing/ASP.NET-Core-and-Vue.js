@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Travel.Application.TourLists.Queries.ExportTours;
 
 namespace Travel.Application.Common.Interfaces

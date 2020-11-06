@@ -32,14 +32,11 @@ namespace Travel.Application.TourPackages.Commands.UpdateTourPackageDetail
     public async Task<Unit> Handle(UpdateTourPackageDetailCommand request, CancellationToken cancellationToken)
     {
       var entity = await _context.TourPackages.FindAsync(request.Id);
-
       if (entity == null)
       {
         throw new NotFoundException(nameof(TourPackage), request.Id);
       }
-
       entity.ListId = request.ListId;
-
       entity.WhatToExpect = request.WhatToExpect;
       entity.MapLocation = request.MapLocation;
       entity.Price = request.Price;

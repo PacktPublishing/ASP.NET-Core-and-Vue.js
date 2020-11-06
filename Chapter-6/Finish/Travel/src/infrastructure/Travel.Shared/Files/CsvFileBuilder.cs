@@ -15,7 +15,6 @@ namespace Travel.Shared.Files
       using (var streamWriter = new StreamWriter(memoryStream))
       {
         using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-
         csvWriter.WriteRecords(records);
       }
 

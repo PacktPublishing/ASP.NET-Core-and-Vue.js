@@ -17,7 +17,6 @@ namespace Travel.Application.TourLists.Commands.DeleteTourList
   public class DeleteTourListCommandHandler : IRequestHandler<DeleteTourListCommand>
   {
     private readonly IApplicationDbContext _context;
-
     public DeleteTourListCommandHandler(IApplicationDbContext context)
     {
       _context = context;
@@ -35,7 +34,6 @@ namespace Travel.Application.TourLists.Commands.DeleteTourList
       }
 
       _context.TourLists.Remove(entity);
-
       await _context.SaveChangesAsync(cancellationToken);
 
       return Unit.Value;

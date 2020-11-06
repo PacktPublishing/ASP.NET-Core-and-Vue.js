@@ -10,7 +10,6 @@ namespace Travel.Application.TourPackages.Commands.CreateTourPackage
   {
     private readonly IApplicationDbContext _context;
 
-
     public CreateTourPackageCommandValidator(IApplicationDbContext context)
     {
       _context = context;

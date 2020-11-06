@@ -17,7 +17,6 @@ namespace Travel.Application.Common.Behaviors
     public async Task Process(TRequest request, CancellationToken cancellationToken)
     {
       var requestName = typeof(TRequest).Name;
-
       _logger.LogInformation("Travel Request: {@Request}",
        requestName, request);
     }

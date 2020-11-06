@@ -24,9 +24,7 @@ namespace Travel.Application.Common.Behaviors
       catch (Exception ex)
       {
         var requestName = typeof(TRequest).Name;
-
         _logger.LogError(ex, "Travel Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
-
         throw;
       }
     }

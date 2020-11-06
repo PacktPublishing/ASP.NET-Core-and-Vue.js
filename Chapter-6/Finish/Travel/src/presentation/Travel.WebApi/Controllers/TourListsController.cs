@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Travel.Application.TourLists.Commands.CreateTourList;
 using Travel.Application.TourLists.Commands.DeleteTourList;
 using Travel.Application.TourLists.Commands.UpdateTourList;
 using Travel.Application.TourLists.Queries.ExportTours;
 using Travel.Application.TourLists.Queries.GetTours;
-using Travel.Data.Contexts;
-using Travel.Domain.Entities;
 
 namespace Travel.WebApi.Controllers
 {
@@ -39,10 +36,8 @@ namespace Travel.WebApi.Controllers
     public async Task<ActionResult> Update(int id, UpdateTourListCommand command)
     {
       if (id != command.Id)
-      {
         return BadRequest();
-      }
-
+      
       await Mediator.Send(command);
 
       return NoContent();

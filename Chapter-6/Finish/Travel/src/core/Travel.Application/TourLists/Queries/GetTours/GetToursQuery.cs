@@ -10,9 +10,7 @@ using Travel.Application.Dtos.Tour;
 
 namespace Travel.Application.TourLists.Queries.GetTours
 {
-  public class GetToursQuery : IRequest<ToursVm>
-  {
-  }
+  public class GetToursQuery : IRequest<ToursVm> { }
 
   public class GetToursQueryHandler : IRequestHandler<GetToursQuery, ToursVm>
   {

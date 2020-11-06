@@ -24,14 +24,11 @@ namespace Travel.Application.TourPackages.Commands.DeleteTourPackage
     public async Task<Unit> Handle(DeleteTourPackageCommand request, CancellationToken cancellationToken)
     {
       var entity = await _context.TourPackages.FindAsync(request.Id);
-
       if (entity == null)
       {
         throw new NotFoundException(nameof(TourPackage), request.Id);
       }
-
       _context.TourPackages.Remove(entity);
-
       await _context.SaveChangesAsync(cancellationToken);
 
       return Unit.Value;

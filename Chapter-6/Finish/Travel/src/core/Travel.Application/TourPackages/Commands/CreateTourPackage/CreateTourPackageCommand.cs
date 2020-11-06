@@ -35,14 +35,13 @@ namespace Travel.Application.TourPackages.Commands.CreateTourPackage
         ListId = request.ListId,
         Name = request.Name,
         WhatToExpect = request.WhatToExpect,
+        MapLocation = request.MapLocation,
         Price = request.Price,
         Duration = request.Duration,
         InstantConfirmation = request.InstantConfirmation,
         Currency = request.Currency
       };
-
       _context.TourPackages.Add(entity);
-
       await _context.SaveChangesAsync(cancellationToken);
 
       return entity.Id;

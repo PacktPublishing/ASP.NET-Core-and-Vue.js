@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Travel.Domain.Settings
+﻿namespace Travel.Domain.Settings
 {
   public class MailSettings
   {
