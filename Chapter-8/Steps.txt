@@ -1,0 +1,43 @@
+- install Microsoft.AspNetCore.Mvc.Versioning
+- install Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
+
+- create v1 and v2 folders, these are like namespaces
+- update
+
+- create OpenApi folder
+- create ConfigureSwaggerOptions.cs
+- create SwaggerDefaultValues.cs
+
+- update services.AddSwaggerGen
+    using Travel.WebApi.OpenAPi
+
+- add services.AddTransient
+    using Microsoft.Extensions.Options;
+    using Swashbuckle.AspNetCore.SwaggerGen;
+    using Microsoft.AspNetCore.Mvc;
+
+- update public void Configure
+    IApiVersionDescriptionProvider provider
+    using Microsoft.AspNetCore.Mvc.ApiExplorer;
+
+- update app.UseSwaggerUI
+
+
+
+- update WeatherForecast entity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
