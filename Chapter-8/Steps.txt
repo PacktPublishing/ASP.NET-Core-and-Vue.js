@@ -16,6 +16,9 @@ dotnet add package Serilog.Sinks.File
 dotnet add package Serilog.Sinks.SQLite
 dotnet add package Serilog.Formatting.Compact
 
+
+Some Serilog packages to check out
+
 Serilog.Enrichers.AspnetcoreHttpcontext
 Serilog.Sinks.MSSqlServer
 Serilog.Sinks.Elasticsearch
