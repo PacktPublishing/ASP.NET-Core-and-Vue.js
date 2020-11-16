@@ -54,3 +54,13 @@ Serilog.Sinks.Elasticsearch
 
 in serilog, update all logger LogInformation template
 
+
+- update the Main(string[] args)
+
+- update CreateHostBuilder(string[] args)
+    .UseSerilog()
+
+
+
+
+

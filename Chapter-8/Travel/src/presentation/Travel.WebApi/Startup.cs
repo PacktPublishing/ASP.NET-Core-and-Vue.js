@@ -6,7 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Serilog;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
 using Travel.Data;
@@ -77,7 +76,7 @@ namespace Travel.WebApi
                     }
                 });
             }
-            app.UseSerilogRequestLogging();
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

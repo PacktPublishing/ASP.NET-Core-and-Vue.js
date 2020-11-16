@@ -21,6 +21,7 @@ namespace Travel.WebApi
 
             var name = Assembly.GetExecutingAssembly().GetName();
             Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
                 .Enrich.FromLogContext()
                 .Enrich.WithExceptionDetails()
                 .Enrich.WithMachineName()
@@ -34,8 +35,8 @@ namespace Travel.WebApi
                         new CompactJsonFormatter(),
                         Environment.CurrentDirectory + @"/Logs/log.json",
                         rollingInterval: RollingInterval.Day,
-                        restrictedToMinimumLevel: LogEventLevel.Error)
-                .WriteTo.Console(restrictedToMinimumLevel: LogEventLevel.Debug)
+                        restrictedToMinimumLevel: LogEventLevel.Information)
+                .WriteTo.Console()
                 .CreateLogger();
 
             // Wrap creating and running the host in a try-catch block
