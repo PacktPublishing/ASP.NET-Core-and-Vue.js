@@ -10,7 +10,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
 using Travel.Data;
 using Travel.Shared;
-using Travel.WebApi.OpenApi;
+using Travel.WebApi.Helpers;
 
 namespace Travel.WebApi
 {
@@ -49,13 +49,7 @@ namespace Travel.WebApi
 
             services.AddVersionedApiExplorer(options =>
             {
-                // add the versioned api explorer, which also adds IApiVersionDescriptionProvider service
-                // note: the specified format code will format the version as "'v'major[.minor][-status]"
                 options.GroupNameFormat = "'v'VVV";
-
-                // note: this option is only necessary when versioning by url segment. the SubstitutionFormat
-                // can also be used to control the format of the API version in route templates
-                options.SubstituteApiVersionInUrl = true;
             });
         }
 
@@ -68,7 +62,6 @@ namespace Travel.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    // build a swagger endpoint for each discovered API version
                     foreach (var description in provider.ApiVersionDescriptions)
                     {
                         c.SwaggerEndpoint(
