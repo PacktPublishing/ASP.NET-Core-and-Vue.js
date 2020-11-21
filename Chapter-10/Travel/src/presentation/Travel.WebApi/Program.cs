@@ -28,8 +28,8 @@ namespace Travel.WebApi
                         storeTimestampInUtc: true)
                 .WriteTo.File(
                         new CompactJsonFormatter(),
-                  Environment.CurrentDirectory + @"/Logs/log.json", // Enable this for Mac and Linux users
-                                                                    //Environment.CurrentDirectory + @"\Logs\log.json", // Enable this for Windows users
+                   Environment.CurrentDirectory + @"/Logs/log.json", // Enable this for Mac and Linux users
+                                                                   // Environment.CurrentDirectory + @"\Logs\log.json", // Enable this for Windows users
                           rollingInterval: RollingInterval.Day,
                         restrictedToMinimumLevel: LogEventLevel.Information)
                 .WriteTo.Console()
