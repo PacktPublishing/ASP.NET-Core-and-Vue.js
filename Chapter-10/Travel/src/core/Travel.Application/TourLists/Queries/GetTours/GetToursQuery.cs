@@ -3,7 +3,6 @@ using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -31,35 +30,35 @@ namespace Travel.Application.TourLists.Queries.GetTours
 
         public async Task<ToursVm> Handle(GetToursQuery request, CancellationToken cancellationToken)
         {
-            const string cacheKey = "tourList";
-            ToursVm tourList;
-            string serializedCustomerList;
+            const string cacheKey = "GetTours";
+            ToursVm tourLists;
+            string serializedTourList;
 
-            var redisTourList = await _distributedCache.GetAsync(cacheKey, cancellationToken);
+            var redisTourLists = await _distributedCache.GetAsync(cacheKey, cancellationToken);
 
-            if (redisTourList == null)
+            if (redisTourLists == null)
             {
-                tourList = new ToursVm
+                tourLists = new ToursVm
                 {
                     Lists = await _context.TourLists
                         .ProjectTo<TourListDto>(_mapper.ConfigurationProvider)
                         .OrderBy(t => t.City)
                         .ToListAsync(cancellationToken)
                 };
-                serializedCustomerList = JsonConvert.SerializeObject(tourList);
-                redisTourList = Encoding.UTF8.GetBytes(serializedCustomerList);
+                serializedTourList = JsonConvert.SerializeObject(tourLists);
+                redisTourLists = Encoding.UTF8.GetBytes(serializedTourList);
                 var options = new DistributedCacheEntryOptions()
                     .SetAbsoluteExpiration(DateTime.Now.AddMinutes(10))
                     .SetSlidingExpiration(TimeSpan.FromMinutes(2));
-                await _distributedCache.SetAsync(cacheKey, redisTourList, options, cancellationToken);
-                Console.WriteLine(tourList);
-                return tourList;
+                await _distributedCache.SetAsync(cacheKey, redisTourLists, options, cancellationToken);
+                
+                return tourLists;
             }
             
-            serializedCustomerList = Encoding.UTF8.GetString(redisTourList);
-            tourList = JsonConvert.DeserializeObject<ToursVm>(serializedCustomerList);
-            Console.WriteLine(tourList);
-            return tourList;
+            serializedTourList = Encoding.UTF8.GetString(redisTourLists);
+            tourLists = JsonConvert.DeserializeObject<ToursVm>(serializedTourList);
+            
+            return tourLists;
         }
     }
 }

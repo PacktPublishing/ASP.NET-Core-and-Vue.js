@@ -3,13 +3,14 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Microsoft.Extensions.Configuration;
 using Travel.Application.Common.Behaviors;
 
 namespace Travel.Application
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
+        public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration config)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
@@ -17,8 +18,8 @@ namespace Travel.Application
 
             services.AddStackExchangeRedisCache(options =>
             {
-                options.Configuration = "127.0.0.1:6379";
-
+                options.Configuration = config.GetConnectionString("RedisConnection");
+                
                 var assemblyName = Assembly.GetExecutingAssembly().GetName();
                 options.InstanceName = assemblyName.Name;
             });
