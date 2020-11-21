@@ -81,11 +81,8 @@ namespace Travel.WebApi
                 options.GroupNameFormat = "'v'VVV";
             });
             
-            
-            // configure strongly typed settings object
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-
-            // configure DI for application services
+            
             services.AddScoped<IUserService, UserService>();
         }
 
@@ -109,7 +106,6 @@ namespace Travel.WebApi
             app.UseHttpsRedirection();
             app.UseRouting();
             
-            // custom jwt auth middleware
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseAuthorization();
