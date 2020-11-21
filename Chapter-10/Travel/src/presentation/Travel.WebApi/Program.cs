@@ -1,11 +1,11 @@
-using System;
-using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 using Serilog.Exceptions;
 using Serilog.Formatting.Compact;
+using System;
+using System.Reflection;
 
 namespace Travel.WebApi
 {
@@ -13,7 +13,6 @@ namespace Travel.WebApi
     {
         public static int Main(string[] args)
         {
-
             var name = Assembly.GetExecutingAssembly().GetName();
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -29,9 +28,9 @@ namespace Travel.WebApi
                         storeTimestampInUtc: true)
                 .WriteTo.File(
                         new CompactJsonFormatter(),
-                        Environment.CurrentDirectory + @"/Logs/log.json", // For Mac and Linux users
-                                                                          // Environment.CurrentDirectory + @"\Logs\log.json", // For Windows users
-                        rollingInterval: RollingInterval.Day,
+                  Environment.CurrentDirectory + @"/Logs/log.json", // Enable this for Mac and Linux users
+                                                                    //Environment.CurrentDirectory + @"\Logs\log.json", // Enable this for Windows users
+                          rollingInterval: RollingInterval.Day,
                         restrictedToMinimumLevel: LogEventLevel.Information)
                 .WriteTo.Console()
                 .CreateLogger();

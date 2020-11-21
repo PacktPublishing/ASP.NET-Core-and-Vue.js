@@ -23,8 +23,8 @@ namespace Travel.WebApi
                 .Enrich.WithProperty("Assembly", $"{name.Name}")
                 .Enrich.WithProperty("Assembly", $"{name.Version}")
                 .WriteTo.SQLite(
-                        Environment.CurrentDirectory + @"/Logs/log.db", // For Mac and Linux users
-                                                                        // Environment.CurrentDirectory + @"\Logs\log.db", // For Windows users
+                        Environment.CurrentDirectory + @"/Logs/log.db", // Enable this for Mac and Linux users
+                                                                        // Environment.CurrentDirectory + @"\Logs\log.db", // Enable this for Windows users
                         restrictedToMinimumLevel: LogEventLevel.Information,
                         storeTimestampInUtc: true)
                 .WriteTo.File(

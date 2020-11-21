@@ -51,13 +51,13 @@ namespace Travel.Application.TourLists.Queries.GetTours
                     .SetAbsoluteExpiration(DateTime.Now.AddMinutes(10))
                     .SetSlidingExpiration(TimeSpan.FromMinutes(2));
                 await _distributedCache.SetAsync(cacheKey, redisTourLists, options, cancellationToken);
-                
+
                 return tourLists;
             }
-            
+
             serializedTourList = Encoding.UTF8.GetString(redisTourLists);
             tourLists = JsonConvert.DeserializeObject<ToursVm>(serializedTourList);
-            
+
             return tourLists;
         }
     }
