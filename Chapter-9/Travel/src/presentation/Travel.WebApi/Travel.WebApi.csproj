@@ -31,7 +31,4 @@
     <ProjectReference Include="..\..\infrastructure\Travel.Shared\Travel.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Auth\" />
-  </ItemGroup>
 </Project>

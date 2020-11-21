@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Travel.WebApi.Controllers.v2
 {
-    [Authorize]
     [ApiVersion("2.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]

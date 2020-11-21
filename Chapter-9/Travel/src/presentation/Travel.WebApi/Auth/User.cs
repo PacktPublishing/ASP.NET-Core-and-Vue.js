@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace WebApi.Entities
+namespace Travel.WebApi.Auth
 {
     public class User
     {

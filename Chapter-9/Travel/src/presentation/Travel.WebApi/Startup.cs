@@ -1,5 +1,3 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
 using Travel.Data;
@@ -38,7 +34,11 @@ namespace Travel.WebApi
             services.AddHttpContextAccessor();
 
             services.AddControllers();
-            
+            services.AddSwaggerGen(c =>
+            {
+                c.OperationFilter<SwaggerDefaultValues>();
+            });
+
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             services.AddApiVersioning(config =>
@@ -52,7 +52,8 @@ namespace Travel.WebApi
             {
                 options.GroupNameFormat = "'v'VVV";
             });
-
+            
+            
             // configure strongly typed settings object
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
@@ -77,14 +78,14 @@ namespace Travel.WebApi
                 });
             }
 
-
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            
             // custom jwt auth middleware
             app.UseMiddleware<JwtMiddleware>();
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
-          
             app.UseAuthorization();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

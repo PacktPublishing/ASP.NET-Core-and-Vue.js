@@ -1,5 +1,3 @@
-﻿using Travel.Domain.Entities;
-
 namespace Travel.WebApi.Auth
 {
     public class AuthenticateResponse

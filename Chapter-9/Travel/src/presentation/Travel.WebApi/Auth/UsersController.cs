@@ -6,9 +6,12 @@ namespace Travel.WebApi.Auth
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private IUserService _userService;
 
-        public UsersController(IUserService userService) => _userService = userService;
+        public UsersController(IUserService userService)
+        {
+            _userService = userService;
+        }
 
         [HttpPost("authenticate")]
         public IActionResult Authenticate(AuthenticateRequest model)
@@ -26,7 +29,6 @@ namespace Travel.WebApi.Auth
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
-
             return Ok(users);
         }
     }
