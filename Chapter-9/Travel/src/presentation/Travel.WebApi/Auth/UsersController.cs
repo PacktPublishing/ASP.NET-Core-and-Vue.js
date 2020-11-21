@@ -2,15 +2,16 @@
 
 namespace Travel.WebApi.Auth
 {
+    [ApiVersion("1.0")]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
         public UsersController(IUserService userService) => _userService = userService;
-
+        
         [HttpPost("auth")]
-        public IActionResult Authenticate(AuthenticateRequest model)
+        public IActionResult Authenticate([FromBody] AuthenticateRequest model)
         {
             var response = _userService.Authenticate(model);
 
@@ -18,15 +19,6 @@ namespace Travel.WebApi.Auth
                 return BadRequest(new { message = "Username or password is incorrect" });
 
             return Ok(response);
-        }
-
-        [Authorize]
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var users = _userService.GetAll();
-            
-            return Ok(users);
         }
     }
 }
