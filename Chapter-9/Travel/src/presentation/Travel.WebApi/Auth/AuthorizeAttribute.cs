@@ -1,10 +1,20 @@
 ﻿using System;
-namespace Travel.WebApi.Helpers
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Travel.Domain.Entities;
+
+namespace Travel.WebApi.Auth
 {
-    public class AuthorizeAttribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+    public class AuthorizeAttribute : Attribute, IAuthorizationFilter
     {
-        public AuthorizeAttribute()
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
+            var user = (User)context.HttpContext.Items["User"];
+
+            if (user == null)  // If not logged
+                context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
         }
     }
 }

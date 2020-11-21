@@ -1,10 +1,7 @@
-﻿using System;
-namespace Travel.WebApi.Helpers
+﻿namespace Travel.WebApi.Auth
 {
-    public class EmptyClass
+    public class AppSettings
     {
-        public EmptyClass()
-        {
-        }
+        public string Secret { get; set; }
     }
 }
