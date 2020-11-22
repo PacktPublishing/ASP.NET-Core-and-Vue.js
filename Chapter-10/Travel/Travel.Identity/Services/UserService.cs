@@ -27,8 +27,8 @@ namespace Travel.Identity.Services
             }
         };
 
-        private readonly IdentitySettings _identitySettings;
-        public UserService(IOptions<IdentitySettings> appSettings) => _identitySettings = appSettings.Value;
+        private readonly AuthSettings _authSettings;
+        public UserService(IOptions<AuthSettings> appSettings) => _authSettings = appSettings.Value;
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
@@ -47,7 +47,7 @@ namespace Travel.Identity.Services
 
         private string GenerateJwtToken(User user)
         {
-            byte[] key = Encoding.ASCII.GetBytes(_identitySettings.Secret);
+            byte[] key = Encoding.ASCII.GetBytes(_authSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),

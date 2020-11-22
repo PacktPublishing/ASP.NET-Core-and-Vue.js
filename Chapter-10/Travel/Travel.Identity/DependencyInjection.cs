@@ -11,8 +11,7 @@ namespace Travel.Identity
   {
     public static IServiceCollection AddInfrastructureIdentity(this IServiceCollection services, IConfiguration config)
     {
-      services.Configure<IdentitySettings>(config.GetSection(nameof(IdentitySettings)));
-      
+      services.Configure<AuthSettings>(config.GetSection(nameof(AuthSettings)));
       services.AddScoped<IUserService, UserService>();
       
       return services;

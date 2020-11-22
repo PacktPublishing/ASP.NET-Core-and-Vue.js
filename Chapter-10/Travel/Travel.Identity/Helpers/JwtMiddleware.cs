@@ -13,12 +13,12 @@ namespace Travel.Identity.Helpers
     public class JwtMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly IdentitySettings _identitySettings;
+        private readonly AuthSettings _authSettings;
 
-        public JwtMiddleware(RequestDelegate next, IOptions<IdentitySettings> appSettings)
+        public JwtMiddleware(RequestDelegate next, IOptions<AuthSettings> appSettings)
         {
             _next = next;
-            _identitySettings = appSettings.Value;
+            _authSettings = appSettings.Value;
         }
 
         public async Task Invoke(HttpContext context, IUserService userService)
@@ -36,7 +36,7 @@ namespace Travel.Identity.Helpers
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                byte[] key = Encoding.ASCII.GetBytes(_identitySettings.Secret);
+                byte[] key = Encoding.ASCII.GetBytes(_authSettings.Secret);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,

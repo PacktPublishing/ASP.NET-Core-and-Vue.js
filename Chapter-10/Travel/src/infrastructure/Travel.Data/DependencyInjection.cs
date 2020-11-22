@@ -10,8 +10,6 @@ namespace Travel.Data
   {
     public static IServiceCollection AddInfrastructureData(this IServiceCollection services, IConfiguration config)
     {
-
-
       services.AddDbContext<ApplicationDbContext>(options => options
         .UseSqlite(config.GetConnectionString("DefaultConnection")));
 
