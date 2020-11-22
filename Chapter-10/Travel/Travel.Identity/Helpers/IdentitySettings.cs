@@ -1,4 +1,4 @@
-namespace Travel.WebApi.Auth
+namespace Travel.Identity.Helpers
 {
     public class AppSettings
     {

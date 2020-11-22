@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace Travel.WebApi.Auth
 {
     public class User
@@ -9,7 +7,6 @@ namespace Travel.WebApi.Auth
         public string LastName { get; set; }
         public string Username { get; set; }
 
-        [JsonIgnore]
         public string Password { get; set; }
     }
 }

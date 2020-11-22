@@ -1,4 +1,7 @@
-namespace Travel.WebApi.Auth
+using Travel.Domain.Entities;
+using Travel.WebApi.Auth;
+
+namespace Travel.Identity.Models
 {
     public class AuthenticateResponse
     {

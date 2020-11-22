@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Travel.WebApi.Auth
+namespace Travel.Identity.Models
 {
     public class AuthenticateRequest
     {
