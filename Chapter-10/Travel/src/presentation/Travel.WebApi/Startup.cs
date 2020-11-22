@@ -8,8 +8,9 @@ using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
 using Travel.Data;
+using Travel.Identity;
+using Travel.Identity.Helpers;
 using Travel.Shared;
-using Travel.WebApi.Auth;
 using Travel.WebApi.Extensions;
 using Travel.WebApi.Helpers;
 
@@ -30,6 +31,7 @@ namespace Travel.WebApi
             services.AddApplication(Configuration);
             services.AddInfrastructureData(Configuration);
             services.AddInfrastructureShared(Configuration);
+            services.AddInfrastructureIdentity(Configuration);
 
             services.AddHttpContextAccessor();
             services.AddControllers();
@@ -39,10 +41,6 @@ namespace Travel.WebApi
             services.AddSwaggerGenExtension();
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-            services.AddScoped<IUserService, UserService>();
-
-
-            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

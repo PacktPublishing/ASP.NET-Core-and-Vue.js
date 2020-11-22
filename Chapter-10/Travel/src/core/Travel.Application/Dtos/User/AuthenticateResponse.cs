@@ -1,7 +1,5 @@
-using Travel.Domain.Entities;
-using Travel.WebApi.Auth;
 
-namespace Travel.Identity.Models
+namespace Travel.Application.Dtos.User
 {
     public class AuthenticateResponse
     {
@@ -12,7 +10,7 @@ namespace Travel.Identity.Models
         public string Token { get; set; }
 
 
-        public AuthenticateResponse(User user, string token)
+        public AuthenticateResponse(Domain.Entities.User user, string token)
         {
             Id = user.Id;
             FirstName = user.FirstName;

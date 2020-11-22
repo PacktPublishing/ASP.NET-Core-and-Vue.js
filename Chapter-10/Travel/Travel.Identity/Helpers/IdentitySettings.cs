@@ -1,6 +1,6 @@
 namespace Travel.Identity.Helpers
 {
-    public class AppSettings
+    public class IdentitySettings
     {
         public string Secret { get; set; }
     }

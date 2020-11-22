@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Travel.Application.Common.Interfaces;
 
-namespace Travel.WebApi.Auth
+namespace Travel.Identity.Helpers
 {
     public class JwtMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly AppSettings _appSettings;
+        private readonly IdentitySettings _identitySettings;
 
-        public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
+        public JwtMiddleware(RequestDelegate next, IOptions<IdentitySettings> appSettings)
         {
             _next = next;
-            _appSettings = appSettings.Value;
+            _identitySettings = appSettings.Value;
         }
 
         public async Task Invoke(HttpContext context, IUserService userService)
@@ -35,7 +36,7 @@ namespace Travel.WebApi.Auth
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                byte[] key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+                byte[] key = Encoding.ASCII.GetBytes(_identitySettings.Secret);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,

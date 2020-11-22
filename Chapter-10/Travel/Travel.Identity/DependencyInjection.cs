@@ -1,22 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Travel.Application.Common.Interfaces;
-using Travel.Data.Contexts;
+using Travel.Identity.Helpers;
+using Travel.Identity.Services;
 
-namespace Travel.Data
+
+namespace Travel.Identity
 {
   public static class DependencyInjection
   {
-    public static IServiceCollection AddInfrastructureData(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddInfrastructureIdentity(this IServiceCollection services, IConfiguration config)
     {
-
-
-      services.AddDbContext<ApplicationDbContext>(options => options
-        .UseSqlite(config.GetConnectionString("DefaultConnection")));
-
-      services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-
+      services.Configure<IdentitySettings>(config.GetSection(nameof(IdentitySettings)));
+      
+      services.AddScoped<IUserService, UserService>();
+      
       return services;
     }
   }

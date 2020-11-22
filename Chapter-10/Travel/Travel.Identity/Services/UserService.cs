@@ -6,8 +6,12 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Travel.Application.Common.Interfaces;
+using Travel.Application.Dtos.User;
+using Travel.Domain.Entities;
+using Travel.Identity.Helpers;
 
-namespace Travel.WebApi.Auth
+namespace Travel.Identity.Services
 {
     public class UserService : IUserService
     {
@@ -15,7 +19,7 @@ namespace Travel.WebApi.Auth
         {
             new User
             {
-                Id = 1, 
+                Id = 1,
                 FirstName = "Yourname",
                 LastName = "Yoursurname",
                 Username = "yoursuperhero",
@@ -23,36 +27,37 @@ namespace Travel.WebApi.Auth
             }
         };
 
-        private readonly AppSettings _appSettings;
-        public UserService(IOptions<AppSettings> appSettings) => _appSettings = appSettings.Value;
+        private readonly IdentitySettings _identitySettings;
+        public UserService(IOptions<IdentitySettings> appSettings) => _identitySettings = appSettings.Value;
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
             var user = _users.SingleOrDefault(u => u.Username == model.Username && u.Password == model.Password);
-            
-            if (user == null) 
+
+            if (user == null)
                 return null;
-            
+
             var token = GenerateJwtToken(user);
 
             return new AuthenticateResponse(user, token);
         }
 
-        public User GetById(int id) => _users.FirstOrDefault(u => u.Id == id);
         
+        public User GetById(int id) => _users.FirstOrDefault(u => u.Id == id);
+
         private string GenerateJwtToken(User user)
         {
-            byte[] key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            byte[] key = Encoding.ASCII.GetBytes(_identitySettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-            
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            
+
             return tokenHandler.WriteToken(token);
         }
     }

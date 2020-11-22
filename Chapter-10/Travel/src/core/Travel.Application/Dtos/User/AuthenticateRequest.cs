@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Travel.Identity.Models
+namespace Travel.Application.Dtos.User
 {
     public class AuthenticateRequest
     {

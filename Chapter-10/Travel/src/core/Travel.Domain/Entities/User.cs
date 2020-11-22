@@ -1,4 +1,4 @@
-namespace Travel.WebApi.Auth
+namespace Travel.Domain.Entities
 {
     public class User
     {
