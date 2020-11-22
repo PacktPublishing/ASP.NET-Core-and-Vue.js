@@ -43,7 +43,7 @@ namespace Travel.WebApi
             services.AddSwaggerGen(c =>
             {
                 c.OperationFilter<SwaggerDefaultValues>();
-                
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "JWT Authorization header using the Bearer scheme.",
@@ -67,9 +67,6 @@ namespace Travel.WebApi
                     }
                 });
             });
-            
-
-            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             services.AddApiVersioning(config =>
             {
@@ -82,8 +79,8 @@ namespace Travel.WebApi
             {
                 options.GroupNameFormat = "'v'VVV";
             });
-                        
-            services.AddScoped<IUserService, UserService>();
+
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -105,11 +102,11 @@ namespace Travel.WebApi
 
             app.UseHttpsRedirection();
             app.UseRouting();
-            
+
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseAuthorization();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
