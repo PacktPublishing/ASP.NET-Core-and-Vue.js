@@ -24,10 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Travel.Identity\Travel.Identity.csproj" />
     <ProjectReference Include="..\..\core\Travel.Application\Travel.Application.csproj" />
     <ProjectReference Include="..\..\infrastructure\Travel.Data\Travel.Data.csproj" />
     <ProjectReference Include="..\..\infrastructure\Travel.Shared\Travel.Shared.csproj" />
+    <ProjectReference Include="..\..\infrastructure\Travel.Identity\Travel.Identity.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>

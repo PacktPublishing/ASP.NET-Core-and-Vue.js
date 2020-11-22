@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Travel.WebApi.Auth;
+using Travel.Identity.Helpers;
+
 
 namespace Travel.WebApi.Controllers.v1
 {

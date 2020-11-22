@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +10,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
+using Travel.Application.Common.Interfaces;
 using Travel.Data;
+using Travel.Identity;
+using Travel.Identity.Helpers;
+using Travel.Identity.Services;
 using Travel.Shared;
-using Travel.WebApi.Auth;
 using Travel.WebApi.Helpers;
 
 namespace Travel.WebApi
@@ -34,10 +35,11 @@ namespace Travel.WebApi
             services.AddApplication();
             services.AddInfrastructureData();
             services.AddInfrastructureShared(Configuration);
+            services.AddInfrastructureIdentity(Configuration);
 
             services.AddHttpContextAccessor();
-
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.OperationFilter<SwaggerDefaultValues>();
@@ -80,9 +82,7 @@ namespace Travel.WebApi
             {
                 options.GroupNameFormat = "'v'VVV";
             });
-            
-            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            
+                        
             services.AddScoped<IUserService, UserService>();
         }
 
