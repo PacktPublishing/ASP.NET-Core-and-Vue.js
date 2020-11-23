@@ -48,8 +48,8 @@ namespace Travel.Application.TourLists.Queries.GetTours
                 serializedTourList = JsonConvert.SerializeObject(tourLists);
                 redisTourLists = Encoding.UTF8.GetBytes(serializedTourList);
                 var options = new DistributedCacheEntryOptions()
-                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(10))
-                    .SetSlidingExpiration(TimeSpan.FromMinutes(2));
+                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(5))
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(1));
                 await _distributedCache.SetAsync(cacheKey, redisTourLists, options, cancellationToken);
 
                 return tourLists;
