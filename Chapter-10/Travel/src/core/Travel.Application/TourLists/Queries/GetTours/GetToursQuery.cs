@@ -31,8 +31,7 @@ namespace Travel.Application.TourLists.Queries.GetTours
         public async Task<ToursVm> Handle(GetToursQuery request, CancellationToken cancellationToken)
         {
             const string cacheKey = "GetTours";
-            ToursVm tourLists;
-            string serializedTourList;
+            ToursVm tourLists; string serializedTourList;
 
             var redisTourLists = await _distributedCache.GetAsync(cacheKey, cancellationToken);
 
