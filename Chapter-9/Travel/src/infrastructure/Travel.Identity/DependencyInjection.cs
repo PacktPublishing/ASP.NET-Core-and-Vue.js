@@ -4,7 +4,6 @@ using Travel.Application.Common.Interfaces;
 using Travel.Identity.Helpers;
 using Travel.Identity.Services;
 
-
 namespace Travel.Identity
 {
   public static class DependencyInjection

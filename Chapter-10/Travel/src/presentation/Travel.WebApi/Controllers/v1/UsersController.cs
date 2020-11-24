@@ -2,7 +2,6 @@
 using Travel.Application.Common.Interfaces;
 using Travel.Application.Dtos.User;
 
-
 namespace Travel.WebApi.Controllers.v1
 {
     /// <summary>
@@ -14,11 +13,11 @@ namespace Travel.WebApi.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class UsersController : ControllerBase 
+    public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
         public UsersController(IUserService userService) => _userService = userService;
-        
+
         [HttpPost("auth")]
         public IActionResult Authenticate([FromBody] AuthenticateRequest model)
         {
