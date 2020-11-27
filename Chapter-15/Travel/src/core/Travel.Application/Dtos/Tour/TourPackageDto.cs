@@ -15,10 +15,10 @@ namespace Travel.Application.Dtos.Tour
     public void Mapping(Profile profile)
     {
       profile.CreateMap<TourPackage, TourPackageDto>()
-        .ForMember(d =>
-          d.Currency, opt =>
-          opt.MapFrom(s =>
-            (int)s.Currency));
+        .ForMember(tpDto =>
+          tpDto.Currency, opt =>
+          opt.MapFrom(tp =>
+            (int)tp.Currency));
     }
   }
 }

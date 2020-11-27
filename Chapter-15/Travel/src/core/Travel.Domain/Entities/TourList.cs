@@ -6,10 +6,10 @@ namespace Travel.Domain.Entities
   {
     public TourList()
     {
-      Tours = new List<TourPackage>();
+      TourPackages = new List<TourPackage>();
     }
 
-    public IList<TourPackage> Tours { get; set; }
+    public IList<TourPackage> TourPackages { get; set; }
     public int Id { get; set; }
     public string City { get; set; }
     public string Country { get; set; }
