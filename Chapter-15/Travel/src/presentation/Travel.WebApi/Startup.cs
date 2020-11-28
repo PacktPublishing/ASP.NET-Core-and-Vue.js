@@ -41,6 +41,8 @@ namespace Travel.WebApi
             services.AddSwaggerGenExtension();
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +53,7 @@ namespace Travel.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerExtension(provider);
             }
-
+            app.UseCors(b => b.AllowAnyOrigin());
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
