@@ -53,7 +53,12 @@ namespace Travel.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerExtension(provider);
             }
-            app.UseCors(b => b.AllowAnyOrigin());
+            app.UseCors(b =>
+            {
+                b.AllowAnyOrigin();
+                b.AllowAnyHeader();
+                b.AllowAnyMethod();
+            });
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
