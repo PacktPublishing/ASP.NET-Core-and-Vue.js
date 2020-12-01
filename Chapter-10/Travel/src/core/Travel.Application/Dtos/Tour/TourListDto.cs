@@ -4,16 +4,17 @@ using Travel.Domain.Entities;
 
 namespace Travel.Application.Dtos.Tour
 {
-  public class TourListDto : IMapFrom<TourList>
-  {
-    public TourListDto()
+    public class TourListDto : IMapFrom<TourList>
     {
-      Items = new List<TourPackageDto>();
-    }
+        public TourListDto()
+        {
+            TourPackages = new List<TourPackageDto>();
+        }
 
-    public IList<TourPackageDto> Items { get; set; }
-    public int Id { get; set; }
-    public string City { get; set; }
-    public string About { get; set; }
-  }
+        public IList<TourPackageDto> TourPackages { get; set; }
+        public string Country { get; set; }
+        public int Id { get; set; }
+        public string City { get; set; }
+        public string About { get; set; }
+    }
 }
