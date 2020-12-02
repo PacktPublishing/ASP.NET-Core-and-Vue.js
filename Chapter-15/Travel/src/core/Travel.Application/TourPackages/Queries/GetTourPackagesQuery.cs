@@ -27,11 +27,11 @@ namespace Travel.Application.TourPackages.Queries
             _mapper = mapper;
         }
 
-        public  Task<List<TourPackageDto>> Handle(GetTourPackagesQuery request, CancellationToken cancellationToken)
+        public Task<List<TourPackageDto>> Handle(GetTourPackagesQuery request, CancellationToken cancellationToken)
         {
-            var tourPackages =  _context.TourPackages
-                .Where(t => t.ListId == request.ListId)
-                .OrderBy(t => t.Name)
+            var tourPackages = _context.TourPackages
+                .Where(tp => tp.ListId == request.ListId)
+                .OrderBy(tp => tp.Name)
                 .ProjectTo<TourPackageDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
             
