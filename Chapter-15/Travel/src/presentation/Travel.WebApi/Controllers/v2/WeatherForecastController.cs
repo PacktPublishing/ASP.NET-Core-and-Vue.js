@@ -47,43 +47,43 @@ namespace Travel.WebApi.Controllers.v2
 
         private static string GetSummary(int temp)
         {
-            if (temp > -20 && temp < -10)
+            if (temp >= -20 && temp <= -10)
             {
                 return Summaries[0];
             }
-            else if (temp > -9 && temp < 0)
+            else if (temp >= -9 && temp <= 0)
             {
                 return Summaries[1];
             }
-            else if (temp > 1 && temp < 10)
+            else if (temp >= 1 && temp <= 10)
             {
                 return Summaries[2];
             }
-            else if (temp > 11 && temp < 20)
+            else if (temp >= 11 && temp <= 20)
             {
                 return Summaries[3];
             }
-            else if (temp > 1 && temp < 10)
+            else if (temp >= 1 && temp <= 10)
             {
                 return Summaries[4];
             }
-            else if (temp > 11 && temp < 20)
+            else if (temp >= 11 && temp <= 20)
             {
                 return Summaries[5];
             }
-            else if (temp > 21 && temp < 30)
+            else if (temp >= 21 && temp <= 30)
             {
                 return Summaries[6];
             }
-            else if (temp > 31 && temp < 40)
+            else if (temp >= 31 && temp <= 40)
             {
                 return Summaries[7];
             }
-            else if (temp > 41 && temp < 50)
+            else if (temp >= 41 && temp <= 50)
             {
                 return Summaries[8];
             }
-            else if (temp > 51 && temp < 55)
+            else if (temp >= 51 && temp <= 55)
             {
                 return Summaries[9];
             }
