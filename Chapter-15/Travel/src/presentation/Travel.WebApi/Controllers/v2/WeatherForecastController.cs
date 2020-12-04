@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Travel.WebApi.Controllers.v2
 {
@@ -13,17 +10,9 @@ namespace Travel.WebApi.Controllers.v2
     [Route("api/v{version:apiVersion}/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
+        private static readonly string[] Summaries = {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
 
         [HttpPost]
         public IEnumerable<WeatherForecast> Post(string city)
@@ -32,63 +21,32 @@ namespace Travel.WebApi.Controllers.v2
 
             return Enumerable.Range(1, 14).Select(index =>
             {
-                var celcius = rng.Next(-20, 55);
+                var celsius = rng.Next(-10, 40);
 
                 return new WeatherForecast
                 {
                     Date = DateTime.Now.AddDays(index),
-                    TemperatureC = celcius,
-                    Summary = GetSummary(celcius),
+                    TemperatureC = celsius,
+                    Summary = GetSummary(celsius),
                     City = city
                 };
-            })
-            .ToArray();
+            }).ToArray();
         }
 
         private static string GetSummary(int temp)
         {
-            if (temp >= -20 && temp <= -10)
-            {
-                return Summaries[0];
-            }
-            else if (temp >= -9 && temp <= 0)
-            {
-                return Summaries[1];
-            }
-            else if (temp >= 1 && temp <= 10)
-            {
-                return Summaries[2];
-            }
-            else if (temp >= 11 && temp <= 20)
-            {
-                return Summaries[3];
-            }
-            else if (temp >= 1 && temp <= 10)
-            {
-                return Summaries[4];
-            }
-            else if (temp >= 11 && temp <= 20)
-            {
-                return Summaries[5];
-            }
-            else if (temp >= 21 && temp <= 30)
-            {
-                return Summaries[6];
-            }
-            else if (temp >= 31 && temp <= 40)
-            {
-                return Summaries[7];
-            }
-            else if (temp >= 41 && temp <= 50)
-            {
-                return Summaries[8];
-            }
-            else if (temp >= 51 && temp <= 55)
-            {
-                return Summaries[9];
-            }
-
-            return "Not Advisable";
+            if (temp >= -5 && temp <= -1) return Summaries[0];
+            if (temp >= 0 && temp <= 4) return Summaries[1];
+            if (temp >= 5 && temp <= 9) return Summaries[2];
+            if (temp >= 10 && temp <= 14) return Summaries[3];
+            if (temp >= 15 && temp <= 19) return Summaries[4];
+            if (temp >= 20 && temp <= 24) return Summaries[5];
+            if (temp >= 25 && temp <= 29) return Summaries[6];
+            if (temp >= 30 && temp <= 34) return Summaries[7];
+            if (temp >= 35 && temp <= 39) return Summaries[8];
+            if (temp >= 40 && temp <= 44) return Summaries[9];
+            
+            return "Extreme";
         }
     }
 }
