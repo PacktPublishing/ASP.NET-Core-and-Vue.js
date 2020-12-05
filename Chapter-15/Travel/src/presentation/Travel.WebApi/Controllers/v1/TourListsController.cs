@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Travel.Application.Dtos.Tour;
 using Travel.Application.TourLists.Commands.CreateTourList;
 using Travel.Application.TourLists.Commands.DeleteTourList;
 using Travel.Application.TourLists.Commands.UpdateTourList;
@@ -27,7 +26,7 @@ namespace Travel.WebApi.Controllers.v1
         }
 
         [HttpPost]
-        public async Task<ActionResult<TourListDto>> Create(CreateTourListCommand command)
+        public async Task<ActionResult<int>> Create(CreateTourListCommand command)
         {
             return await Mediator.Send(command);
         }
