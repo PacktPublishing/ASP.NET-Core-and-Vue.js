@@ -21,7 +21,7 @@ namespace Travel.WebApi.Controllers.v2
 
             return Enumerable.Range(1, 14).Select(index =>
             {
-                var celsius = rng.Next(-10, 40);
+                var celsius = rng.Next(-5, 44);
 
                 return new WeatherForecast
                 {
@@ -45,7 +45,7 @@ namespace Travel.WebApi.Controllers.v2
             if (temp >= 30 && temp <= 34) return Summaries[7];
             if (temp >= 35 && temp <= 39) return Summaries[8];
             if (temp >= 40 && temp <= 44) return Summaries[9];
-            
+
             return "Extreme";
         }
     }
