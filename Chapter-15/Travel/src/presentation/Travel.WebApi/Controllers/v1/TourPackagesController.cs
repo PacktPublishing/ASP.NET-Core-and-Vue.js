@@ -18,7 +18,7 @@ namespace Travel.WebApi.Controllers.v1
         {
             return await Mediator.Send(query);
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<int>> Create(CreateTourPackageCommand command)
         {
@@ -37,7 +37,7 @@ namespace Travel.WebApi.Controllers.v1
         }
 
         [HttpPut("[action]")]
-        public async Task<ActionResult> UpdateItemDetails(int id, UpdateTourPackageDetailCommand command)
+        public async Task<ActionResult> UpdatePackageDetails(int id, UpdateTourPackageDetailCommand command)
         {
             if (id != command.Id)
                 return BadRequest();
