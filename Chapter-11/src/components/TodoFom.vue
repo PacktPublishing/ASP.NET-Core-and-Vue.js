@@ -1,7 +1,7 @@
 <template>
   <div class="mb-4">
     <h1>{{ about.title }}</h1>
-    <h2>{{ about.subTitle }}</h2>
+    <h2>{{ about.subTitle }} {{ version }}</h2>
   </div>
   <div class="mb-3">
     <form @submit.prevent="addNewTodo">
@@ -63,7 +63,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, PropType, onMounted } from "vue";
-import { TodoModel } from "@/models/todoModel";
+import { TodoType } from "@/models/todoModel";
 import { v4 as uuidv4 } from "uuid";
 
 type Props = {
@@ -77,25 +77,31 @@ export default defineComponent({
   props: {
     about: {
       type: Object as PropType<Props>,
-      required: true
-    }
+      required: true,
+    },
   },
 
   setup(props) {
+    // local state
+    const version = ref("v1");
+
+    // type-safe local state
     const newTodo = ref<string>("");
-    const todos = ref<TodoModel[]>([]);
+    const todos = ref<TodoType[]>([]);
 
     function addNewTodo(): void {
       todos.value.push({
         id: uuidv4(),
         done: false,
-        content: newTodo.value
+        content: newTodo.value,
       });
+
+      console.log("newTodo:", newTodo.value);
 
       newTodo.value = "";
     }
 
-    function toggleDone(todo: TodoModel): void {
+    function toggleDone(todo: TodoType): void {
       todo.done = !todo.done;
     }
 
@@ -104,7 +110,7 @@ export default defineComponent({
     }
 
     function markAllDone(): void {
-      todos.value.forEach(todo => (todo.done = true));
+      todos.value.forEach((todo) => (todo.done = true));
     }
 
     function removeAllTodos(): void {
@@ -114,15 +120,16 @@ export default defineComponent({
     onMounted(() => console.log(props?.about?.title));
 
     return {
+      version,
       todos,
       newTodo,
       addNewTodo,
       toggleDone,
       removeTodo,
       markAllDone,
-      removeAllTodos
+      removeAllTodos,
     };
-  }
+  },
 });
 </script>
 

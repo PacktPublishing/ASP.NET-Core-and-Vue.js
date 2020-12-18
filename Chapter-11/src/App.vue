@@ -7,13 +7,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TodoForm from "./components/TodoFom.vue";
+import TodoForm from "@/components/TodoFom.vue";
 
 export default defineComponent({
   name: "App",
 
   components: {
-    TodoForm
+    TodoForm,
   },
 
   // Vue 3
@@ -21,13 +21,13 @@ export default defineComponent({
   setup() {
     const about = {
       title: "Vue 3",
-      subTitle: "TypeScript demo"
+      subTitle: "TypeScript demo",
     };
 
     return {
-      about
+      about,
     };
-  }
+  },
 
   // Vue 2
 
@@ -46,12 +46,4 @@ export default defineComponent({
 
 <style>
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
