@@ -3,8 +3,9 @@
     <h1>{{ about.title }}</h1>
     <h2>{{ about.subTitle }} {{ version }}</h2>
   </div>
-  <div class="mb-3">
-    <form @submit.prevent="addNewTodo">
+
+  <form @submit.prevent="addNewTodo">
+    <div class="mb-5">
       <label for="newTodo" class="form-label">New Todo</label>
       <input
         class="form-control"
@@ -13,29 +14,30 @@
         v-model="newTodo"
         name="newTodo"
       />
-    </form>
-  </div>
+    </div>
+
+    <div class="mb-5 d-flex flex-row justify-content-start">
+      <div class="m-2">
+        <button type="submit" class="btn btn-primary">Add New Todo</button>
+      </div>
+      <div class="m-2">
+        <button type="button" class="btn btn-danger" @click="removeAllTodos">
+          Remove All
+        </button>
+      </div>
+      <div class="m-2">
+        <button type="button" class="btn btn-success" @click="markAllDone">
+          Mark All Done
+        </button>
+      </div>
+    </div>
+  </form>
 
   <div v-if="todos.length === 0">
     <h3>Empty list 🥺</h3>
   </div>
 
-  <div class="mb-5 d-flex flex-row justify-content-start">
-    <div class="m-2">
-      <button type="button" class="btn btn-primary">Add New Todo</button>
-    </div>
-    <div class="m-2">
-      <button type="button" class="btn btn-danger" @click="removeAllTodos">
-        Remove All
-      </button>
-    </div>
-    <div class="m-2">
-      <button type="button" class="btn btn-success" @click="markAllDone">
-        Mark All Done
-      </button>
-    </div>
-  </div>
-  <div>
+  <div v-else>
     <ul class="list-group">
       <li
         class="list-group-item d-flex flex-row justify-content-between align-items-center"
@@ -90,6 +92,8 @@ export default defineComponent({
     const todos = ref<TodoType[]>([]);
 
     function addNewTodo(): void {
+      if (!newTodo.value) return;
+
       todos.value.push({
         id: uuidv4(),
         done: false,
