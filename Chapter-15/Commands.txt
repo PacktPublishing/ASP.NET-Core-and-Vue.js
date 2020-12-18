@@ -1,0 +1,9 @@
+mkdir tests
+cd tests
+dotnet new xunit -o Domain.UnitTests
+dotnet new xunit -o Application.UnitTests
+dotnet new xunit -o Application.IntegrationTests
+cd ..
+dotnet sln add tests/Domain.UnitTests
+dotnet sln add tests/Application.UnitTests
+dotnet sln add tests/Application.IntegrationTests
