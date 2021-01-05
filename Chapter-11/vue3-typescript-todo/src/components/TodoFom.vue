@@ -88,8 +88,8 @@ export default defineComponent({
     const version = ref("v1");
 
     // type-safe local state
-    const newTodo = ref<string>("");
     const todos = ref<TodoType[]>([]);
+    const newTodo = ref(""); // ref<string> is too verbose
 
     function addNewTodo(): void {
       if (!newTodo.value) return;
