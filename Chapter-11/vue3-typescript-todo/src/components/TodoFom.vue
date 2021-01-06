@@ -10,7 +10,7 @@
       <input
         class="form-control"
         id="newTodo"
-        placeholder="code"
+        placeholder="what's on your mind?"
         v-model="newTodo"
         name="newTodo"
       />
