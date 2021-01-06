@@ -45,7 +45,7 @@
         :key="todo.id"
       >
         <h3
-          :class="{ done: todo.done }"
+          :class="{ mark: todo.done }"
           style="cursor: pointer"
           @click="toggleDone(todo)"
         >
@@ -140,7 +140,7 @@ export default defineComponent({
 </script>
 
 <style>
-.done {
+.mark {
   text-decoration: line-through;
 }
 </style>
