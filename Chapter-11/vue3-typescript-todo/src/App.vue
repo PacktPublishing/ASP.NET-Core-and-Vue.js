@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import TodoForm from "./components/TodoFom.vue";
 
 export default defineComponent({
@@ -19,10 +19,10 @@ export default defineComponent({
   // Vue 3
 
   setup() {
-    const about = {
+    const about = ref({
       title: "Vue 3",
       subTitle: "TypeScript demo",
-    };
+    });
 
     return {
       about,
