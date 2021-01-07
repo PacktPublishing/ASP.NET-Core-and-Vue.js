@@ -123,7 +123,7 @@ export default defineComponent({
       todos.value = [];
     }
 
-    onMounted(() => console.log(props.about?.title));
+    onMounted(() => console.log(props.about.title));
 
     return {
       version,
