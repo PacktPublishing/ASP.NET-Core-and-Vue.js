@@ -16,11 +16,14 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () => import("@/views/Main/About")
+    component: () => import("@/views/Main/About"),
   },
   {
     path: "/admin-dashboard",
     component: () => import("@/views/AdminDashboard"),
+    meta: {
+      title: "Admin Dashboard"
+    },
     children: [
       {
         path: "",
