@@ -21,9 +21,6 @@ const routes = [
   {
     path: "/admin-dashboard",
     component: () => import("@/views/AdminDashboard"),
-    meta: {
-      title: "Admin Dashboard"
-    },
     children: [
       {
         path: "",
@@ -33,7 +30,6 @@ const routes = [
         path: "weather-forecast",
         component: () => import("@/views/AdminDashboard/WeatherForecast"),
       },
-
       /* eager loading through static import statement */
       {
         path: "tour-lists",
