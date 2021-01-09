@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/Pages/Home";
-import DefaultContent from "@/views/AdminDashboard/DefaultContent.vue";
+import Home from "@/views/Main/Home";
+import DefaultContent from "@/views/AdminDashboard/DefaultContent";
 import TourLists from "@/views/AdminDashboard/TourLists";
 import TourPackages from "@/views/AdminDashboard/TourPackages";
 import WeatherForecast from "@/views/AdminDashboard/WeatherForecast";
@@ -21,7 +21,7 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () => import("@/views/Pages/About.vue"),
+    component: () => import("@/views/Main/About"),
     meta: {
       title: "About"
     },
