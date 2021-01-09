@@ -11,5 +11,3 @@ export default {
   name: "WeatherForecast",
 };
 </script>
-
-<style scoped></style>

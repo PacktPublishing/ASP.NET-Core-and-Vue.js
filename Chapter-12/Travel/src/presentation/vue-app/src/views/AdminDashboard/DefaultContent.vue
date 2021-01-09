@@ -11,5 +11,3 @@ export default {
   name: "DefaultContent",
 };
 </script>
-
-<style scoped></style>

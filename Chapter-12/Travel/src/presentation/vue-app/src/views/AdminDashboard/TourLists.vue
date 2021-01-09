@@ -11,5 +11,3 @@ export default {
   name: "TourLists",
 };
 </script>
-
-<style scoped></style>

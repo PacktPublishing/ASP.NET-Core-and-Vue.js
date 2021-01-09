@@ -10,26 +10,17 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
-    meta: {
-      title: "Home",
-    },
+    component: Home
   },
   /* lazy loading through dynamic import() */
   {
     path: "/about",
     name: "About",
-    component: () => import("@/views/Main/About"),
-    meta: {
-      title: "About"
-    },
+    component: () => import("@/views/Main/About")
   },
   {
     path: "/admin-dashboard",
     component: () => import("@/views/AdminDashboard"),
-    meta: {
-      title: "Admin Dashboard"
-    },
     children: [
       {
         path: "",
