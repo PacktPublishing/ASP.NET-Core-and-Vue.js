@@ -1,10 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Main/Home";
-import DefaultContent from "@/views/AdminDashboard/DefaultContent";
 import TourLists from "@/views/AdminDashboard/TourLists";
 import TourPackages from "@/views/AdminDashboard/TourPackages";
-import WeatherForecast from "@/views/AdminDashboard/WeatherForecast";
 
 Vue.use(VueRouter);
 
@@ -17,7 +15,7 @@ const routes = [
       title: "Home",
     },
   },
-  /* lazy loading -  component: () => import("...") */
+  /* lazy loading through dynamic import() */
   {
     path: "/about",
     name: "About",
@@ -32,12 +30,17 @@ const routes = [
     meta: {
       title: "Admin Dashboard"
     },
-    /* eager loading -  component: SamplePage */
     children: [
       {
         path: "",
-        component: DefaultContent,
+        component: () => import("@/views/AdminDashboard/DefaultContent"),
       },
+      {
+        path: "weather-forecast",
+        component: () => import("@/views/AdminDashboard/WeatherForecast"),
+      },
+
+      /* eager loading through static import statement */
       {
         path: "tour-lists",
         component: TourLists,
@@ -45,11 +48,7 @@ const routes = [
       {
         path: "tour-packages",
         component: TourPackages,
-      },
-      {
-        path: "weather-forecast",
-        component: WeatherForecast,
-      },
+      }
     ],
   },
   {
