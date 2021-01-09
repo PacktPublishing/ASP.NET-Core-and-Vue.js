@@ -19,7 +19,7 @@
         <span class="menu">Home</span>
       </v-btn>
 
-      <!--        using router-link of Vue Router-->
+      <!-- using router-link of Vue Router -->
       <router-link to="/about">
         <v-btn color="primary" outlined>
           <span class="menu">About</span>

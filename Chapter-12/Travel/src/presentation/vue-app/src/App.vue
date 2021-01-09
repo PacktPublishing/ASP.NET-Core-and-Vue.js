@@ -11,13 +11,8 @@
 import NavigationBar from "@/components/NavigationBar";
 export default {
   name: "App",
-  components: { NavigationBar },
-  data: () => ({
-    //
-  }),
+  components: {
+    NavigationBar,
+  },
 };
 </script>
-
-
-<style scoped>
-</style>
