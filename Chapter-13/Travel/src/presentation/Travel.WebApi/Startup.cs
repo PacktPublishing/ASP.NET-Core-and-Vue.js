@@ -59,23 +59,28 @@ namespace Travel.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerExtension(provider);
             }
+
             else
             {
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseCors(b =>
             {
                 b.AllowAnyOrigin();
                 b.AllowAnyHeader();
                 b.AllowAnyMethod();
             });
+
             app.UseHttpsRedirection();
+
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
+            
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
             app.UseAuthorization();
