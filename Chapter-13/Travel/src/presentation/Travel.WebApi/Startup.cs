@@ -64,7 +64,6 @@ namespace Travel.WebApi
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -81,7 +80,7 @@ namespace Travel.WebApi
             {
                 app.UseSpaStaticFiles();
             }
-            
+
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
             app.UseAuthorization();
@@ -91,11 +90,11 @@ namespace Travel.WebApi
 
                 endpoints.MapToVueCliProxy(
                     pattern: "{*path}",
-                    options: new SpaOptions {SourcePath = "../vue-app"},
-                    npmScript:System.Diagnostics.Debugger.IsAttached ? "serve" : null,
+                    options: new SpaOptions { SourcePath = "../vue-app" },
+                    npmScript: System.Diagnostics.Debugger.IsAttached ? "serve" : null,
                     regex: "Compiled successfully",
                     forceKill: true,
-                    wsl: false // Set to true if you are using WSL on windows. For other operating systems it will be ignored
+                    wsl: false
                 );
             });
         }
