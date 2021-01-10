@@ -13,6 +13,7 @@ using Travel.Identity.Helpers;
 using Travel.Shared;
 using Travel.WebApi.Extensions;
 using Travel.WebApi.Helpers;
+using VueCliMiddleware;
 
 namespace Travel.WebApi
 {
@@ -43,6 +44,11 @@ namespace Travel.WebApi
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             services.AddCors();
+
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "../vue-app/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +59,12 @@ namespace Travel.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerExtension(provider);
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
             app.UseCors(b =>
             {
                 b.AllowAnyOrigin();
@@ -60,12 +72,29 @@ namespace Travel.WebApi
                 b.AllowAnyMethod();
             });
             app.UseHttpsRedirection();
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "../vue-app";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseVueCli(npmScript: "serve");
+                }
             });
         }
     }
