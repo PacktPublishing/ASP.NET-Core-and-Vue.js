@@ -44,12 +44,12 @@ namespace Travel.WebApi
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
-            services.AddCors();
-
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "../vue-app/dist";
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,11 +61,7 @@ namespace Travel.WebApi
                 app.UseSwaggerExtension(provider);
             }
 
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
+            app.UseSpaStaticFiles();
 
             app.UseCors(b =>
             {
@@ -75,11 +71,6 @@ namespace Travel.WebApi
             });
 
             app.UseHttpsRedirection();
-
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
 
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
