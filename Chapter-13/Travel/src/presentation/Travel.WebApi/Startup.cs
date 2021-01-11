@@ -44,6 +44,7 @@ namespace Travel.WebApi
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
+            // NOTE: PRODUCTION Ensure this is the same path that is specified in your webpack output
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "../vue-app/dist";
@@ -61,6 +62,7 @@ namespace Travel.WebApi
                 app.UseSwaggerExtension(provider);
             }
 
+            // PRODUCTION uses webpack static files
             app.UseSpaStaticFiles();
 
             app.UseCors(b =>
@@ -78,14 +80,19 @@ namespace Travel.WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-
+                // NOTE: VueCliProxy is meant for developement and hot module reload
+                // NOTE: SSR has not been tested
+                // Production systems should only need the UseSpaStaticFiles() (above)
+                // You could wrap this proxy in either
+                // if (System.Diagnostics.Debugger.IsAttached)
+                // or a preprocessor such as #if DEBUG
                 endpoints.MapToVueCliProxy(
                     pattern: "{*path}",
                     options: new SpaOptions { SourcePath = "../vue-app" },
                     npmScript: System.Diagnostics.Debugger.IsAttached ? "serve" : null,
                     regex: "Compiled successfully",
                     forceKill: true,
-                    wsl: false
+                    wsl: false // Set to true if you are using WSL on windows. For other operating systems it will be ignored
                 );
             });
         }
