@@ -1,0 +1,131 @@
+{
+    "lists": [
+        {
+            "tourPackages": [
+                {
+                    "id": 9,
+                    "listId": 4,
+                    "name": "Suomenlinna Daily Tour",
+                    "duration": 3,
+                    "instantConfirmation": true,
+                    "currency": 0,
+                    "whatToExpect": "The magnificence of Suomenlinna, the sea fortress in Finland is simply incredible. Located only a very short ferry crossing away from Helsinki. Suomenlinna Fortress is one of the largest sea fortresses around the world that dates back in the mid 18th century and has renovated often ever since. This sea fortress is blessed with many faces that appeal worldwide enthusiasts from all over the world. In addition to, Suomenlinna Island stands out as a home to around 800 locals and a UNESCO World Heritage Site.",
+                    "price": 60,
+                    "mapLocation": "https://www.google.com/maps/place/Tsarina's+Stone/@60.1676559,24.9544509,15z/data=!4m5!3m4!1s0x0:0xf8801b7e87743da9!8m2!3d60.1676559!4d24.9544509"
+                }
+            ],
+            "id": 4,
+            "city": "Helsinki",
+            "about": "Helsinki, Finland's southern capital, sits on a peninsula in the Gulf of Finland. Its central avenue, Mannerheimintie, is flanked by institutions including the National Museum, tracing Finnish history from the Stone Age to the present. Also on Mannerheimintie are the imposing Parliament House and Kiasma, a contemporary art museum. Ornate red-brick Uspenski Cathedral overlooks a harbor.",
+            "country": "Finland"
+        },
+        {
+            "tourPackages": [
+                {
+                    "id": 7,
+                    "listId": 6,
+                    "name": "Fort Santiago",
+                    "duration": 4,
+                    "instantConfirmation": false,
+                    "currency": 1,
+                    "whatToExpect": "This museum and public park was built as a stone fortress at the turn of the 17th century and marked the beginning of the walled city's riverside barricades.",
+                    "price": 50,
+                    "mapLocation": "https://www.google.com/maps/place/Intramuros,+Manila,+1002+Metro+Manila,+Philippines/@14.5891952,120.9656417,15z/data=!3m1!4b1!4m5!3m4!1s0x3397ca3d1375e1fb:0x49ebfa658c0ba08!8m2!3d14.5895972!4d120.9747258"
+                }
+            ],
+            "id": 6,
+            "city": "Manila",
+            "about": "Manila, the capital of the Philippines, is a densely populated bayside city on the island of Luzon, which mixes Spanish colonial architecture with modern skyscrapers. Intramuros, a walled city in colonial times, is the heart of Old Manila. It’s home to the baroque 16th-century San Agustin Church as well as Fort Santiago, a storied citadel and former military prison. ",
+            "country": "Philippines"
+        },
+        {
+            "tourPackages": [
+                {
+                    "id": 1,
+                    "listId": 1,
+                    "name": "Taste of Oslo Walking",
+                    "duration": 4,
+                    "instantConfirmation": true,
+                    "currency": 3,
+                    "whatToExpect": "Meet your guide and the rest of your group in downtown Oslo. Before embarking upon your tasting tour, there's time for a visit to a traditional Norwegian clothing (bunad) shop to learn about Norwegian apparel and traditions.",
+                    "price": 900,
+                    "mapLocation": "https://www.google.com/maps/place/Freiabutikken/@59.9170582,10.7361595,16z/data=!4m5!3m4!1s0x0:0x212f45ff2fb8e661!8m2!3d59.9136754!4d10.7396571"
+                },
+                {
+                    "id": 2,
+                    "listId": 1,
+                    "name": "The Norwegian Opera & Ballet",
+                    "duration": 2,
+                    "instantConfirmation": true,
+                    "currency": 4,
+                    "whatToExpect": "Oslo Opera House is located right by the fjord, and is reminiscent of an iceberg where it rises obliquely from the water's edge. Visitors are invited to go for a walk on the roof and enjoy panoramic views of Oslo and the Oslo Fjord, all year round.",
+                    "price": 600,
+                    "mapLocation": "https://www.google.com/maps/place/Oslo+Opera+House/@59.9074885,10.7531275,15z/data=!4m2!3m1!1s0x0:0x1cb6a7c6a2a2d611?sa=X&ved=2ahUKEwjM75bklqbtAhVlposKHYXsA8AQ_BIwF3oECBUQBQ"
+                },
+                {
+                    "id": 3,
+                    "listId": 1,
+                    "name": "Historic River Walk",
+                    "duration": 3,
+                    "instantConfirmation": false,
+                    "currency": 4,
+                    "whatToExpect": "Enjoy a guided walk along revitalized Akerselva River, lovingly known as Oslo's 'Green Lung.' Learn how the river was a central part of the city's industrialization but has since been cleaned, with numerous parks and open spaces now lining its banks and former factories converted into art galleries and café spaces. Along the way you'll stop for a bite at Mathallen, a gourmet food court where you can find seafood, hams and cheeses, Asian street food, and more.",
+                    "price": 370,
+                    "mapLocation": "https://www.google.com/maps/place/Akerselva,+Oslo+Municipality/data=!4m2!3m1!1s0x46416e1cf57b0481:0xcc2e34812be0c5d2?sa=X&ved=2ahUKEwiY7o3TnKbtAhUPCRAIHdBQATwQ8gEwFXoECBkQAQ"
+                }
+            ],
+            "id": 1,
+            "city": "Oslo",
+            "about": "Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum.",
+            "country": "Norway"
+        },
+        {
+            "tourPackages": [],
+            "id": 5,
+            "city": "Reykjavík",
+            "about": "Reykjavik, on the coast of Iceland, is the country's capital and largest city. It's home to the National and Saga museums, tracing Iceland’s Viking history. The striking concrete Hallgrimskirkja church and rotating Perlan glass dome offer sweeping views of the sea and nearby hills. Exemplifying the island’s volcanic activity is the geothermal Blue Lagoon spa, near the village of Grindavik.",
+            "country": "Iceland"
+        },
+        {
+            "tourPackages": [
+                {
+                    "id": 4,
+                    "listId": 2,
+                    "name": "Vasa Museum",
+                    "duration": 2,
+                    "instantConfirmation": true,
+                    "currency": 4,
+                    "whatToExpect": "The Vasa ship capsized and sank in Stockholm 1628. After 333 years on the seabed the mighty warship was salvaged and the voyage could continue. Today Vasa is the world's only preserved 17th-century ship.",
+                    "price": 90,
+                    "mapLocation": "https://www.google.com/maps/place/Gal%C3%A4rvarvsv%C3%A4gen+14,+115+21+Stockholm,+Sweden/data=!4m2!3m1!1s0x465f9d54728c0769:0xf1f79fb0b3c99e2?sa=X&ved=2ahUKEwjC8vSBnqbtAhVNxIsKHZtXBUoQ8gEwAHoECAYQAQ"
+                },
+                {
+                    "id": 5,
+                    "listId": 2,
+                    "name": "Stockholm City Hall",
+                    "duration": 2,
+                    "instantConfirmation": true,
+                    "currency": 4,
+                    "whatToExpect": "The Stockholm City Hall is one of Sweden's most famous buildings, and one of the capital's most visited tourist attractions. It houses offices for 200 people including the Municipal Council, and is also famous for its grand ceremonial halls and unique art pieces. The Stockholm City Hall is the venue of the Nobel Prize banquet held on 10 December each year. Between May and September, the City Hall Tower offers a breathtaking view of Stockholm.",
+                    "price": 100,
+                    "mapLocation": "https://www.google.com/maps/place/Stockholm+City+Hall/@59.3274506,18.0543456,15z/data=!4m2!3m1!1s0x0:0xaeafc90d911394c0?sa=X&ved=2ahUKEwi994jFnqbtAhWkw4sKHXwHAD4Q_BIwFnoECBYQBQ"
+                },
+                {
+                    "id": 6,
+                    "listId": 2,
+                    "name": "Globen Skyview",
+                    "duration": 2,
+                    "instantConfirmation": true,
+                    "currency": 4,
+                    "whatToExpect": "This touristy trip will give you a good view of the city. It’s a little on the pricier side, but you can stop for a coffee near the top to enjoy the view.",
+                    "price": 170,
+                    "mapLocation": "https://www.google.com/maps/place/Skyview/@59.2937261,18.0830701,15z/data=!4m5!3m4!1s0x0:0x559b926f860cabcf!8m2!3d59.2937261!4d18.0830701"
+                }
+            ],
+            "id": 2,
+            "city": "Stockholm",
+            "about": "Stockholm, the capital of Sweden, encompasses 14 islands and more than 50 bridges on an extensive Baltic Sea archipelago. The cobblestone streets and ochre-colored buildings of Gamla Stan (the old town) are home to the 13th-century Storkyrkan Cathedral, the Kungliga Slottet Royal Palace and the Nobel Museum, which focuses on the Nobel Prize. Ferries and sightseeing boats shuttle passengers between the islands.",
+            "country": "Sweden"
+        }
+    ]
+}
