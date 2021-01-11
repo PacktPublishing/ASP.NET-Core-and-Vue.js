@@ -87,16 +87,17 @@ namespace Travel.WebApi
                 // if (System.Diagnostics.Debugger.IsAttached)
                 // or a preprocessor such as #if DEBUG
                 
-                // endpoints.MapToVueCliProxy(
-                //     pattern: "{*path}",
-                //     options: new SpaOptions { SourcePath = "../vue-app" },
-                //     npmScript: System.Diagnostics.Debugger.IsAttached ? "serve" : null,
-                //     regex: "Compiled successfully",
-                //     forceKill: true,
-                //     wsl: false // Set to true if you are using WSL on windows. For other operating systems it will be ignored
-                // );
+                endpoints.MapToVueCliProxy(
+                    pattern: "{*path}",
+                    options: new SpaOptions { SourcePath = "../vue-app" },
+                    npmScript: System.Diagnostics.Debugger.IsAttached ? "serve" : null,
+                    regex: "Compiled successfully",
+                    forceKill: true,
+                    wsl: false // Set to true if you are using WSL on windows. For other operating systems it will be ignored
+                );
             });
             
+            // Adding this UseSpa removes the required time before launching Vue as SPA
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "../vue-app";

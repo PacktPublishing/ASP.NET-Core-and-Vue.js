@@ -23,14 +23,12 @@ namespace Travel.WebApi
                 .Enrich.WithProperty("Assembly", $"{name.Name}")
                 .Enrich.WithProperty("Assembly", $"{name.Version}")
                 .WriteTo.SQLite(
-                        Environment.CurrentDirectory + @"/Logs/log.db", // Enable this for Mac and Linux users
-                                                                        // Environment.CurrentDirectory + @"\Logs\log.db", // Enable this for Windows users
+                        Environment.CurrentDirectory + @"/Logs/log.db",
                         restrictedToMinimumLevel: LogEventLevel.Information,
                         storeTimestampInUtc: true)
                 .WriteTo.File(
                         new CompactJsonFormatter(),
-                        Environment.CurrentDirectory + @"/Logs/log.json", // For Mac and Linux users
-                                                                          // Environment.CurrentDirectory + @"\Logs\log.json", // For Windows users
+                        Environment.CurrentDirectory + @"/Logs/log.json",
                         rollingInterval: RollingInterval.Day,
                         restrictedToMinimumLevel: LogEventLevel.Information)
                 .WriteTo.Console()
