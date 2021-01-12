@@ -96,17 +96,6 @@ namespace Travel.WebApi
                     wsl: false // Set to true if you are using WSL on windows. For other operating systems it will be ignored
                 );
             });
-            
-            // Adding this UseSpa removes the required time before launching Vue as SPA
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "../vue-app";
-                
-                if (env.IsDevelopment())
-                {
-                    spa.UseVueCli(npmScript: "serve");
-                }
-            });
         }
     }
 }
