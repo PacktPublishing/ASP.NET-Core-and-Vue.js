@@ -4,6 +4,8 @@ import {
   deleteTourListAxios,
   postTourListAxios,
   deleteTourPackageAxios,
+  postTourPackageAxios,
+  putTourPackageAxios,
 } from "@/store/tour/services";
 
 // asynchronous action using Axios
@@ -65,6 +67,36 @@ export async function removeTourPackageAction({ commit }, payload) {
   try {
     await deleteTourPackageAxios(payload);
     commit(types.REMOVE_TOUR_PACKAGE, payload);
+  } catch (e) {
+    alert(e);
+    console.log(e);
+  }
+
+  commit(types.LOADING_TOUR, false);
+}
+
+// asynchronous action using Axios
+export async function addTourPackageAction({ commit }, payload) {
+  commit(types.LOADING_TOUR, true);
+
+  try {
+    const { data } = await postTourPackageAxios(payload);
+    payload.id = data; // storing the id from the response int of ASP.NET Core, which will be used in the UI.
+    commit(types.ADD_TOUR_PACKAGE, payload);
+  } catch (e) {
+    alert(e);
+    console.log(e);
+  }
+
+  commit(types.LOADING_TOUR, false);
+}
+
+export async function updateTourPackageAction({ commit }, payload) {
+  commit(types.LOADING_TOUR, true);
+
+  try {
+    await putTourPackageAxios(payload);
+    commit(types.UPDATE_TOUR_PACKAGE, payload);
   } catch (e) {
     alert(e);
     console.log(e);

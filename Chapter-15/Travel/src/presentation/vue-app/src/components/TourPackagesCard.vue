@@ -43,6 +43,7 @@
                     </div>
                   </v-list-item-content>
                   <v-list-item-action>
+                    <UpdateTourPackageForm :bodyRequest="tourPackage" />
                     <v-icon @click="removeTourPackage(tourPackage.id)">
                       mdi-delete-outline
                     </v-icon>
@@ -67,11 +68,14 @@
   </v-container>
 </template>
 
-
 <script>
 import { mapActions, mapGetters } from "vuex";
+import UpdateTourPackageForm from "@/components/UpdateTourPackageForm";
+
 export default {
   name: "TourPackagesCard",
+
+  components: { UpdateTourPackageForm },
 
   computed: {
     ...mapGetters("tourModule", {
