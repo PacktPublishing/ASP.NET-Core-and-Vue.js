@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.8.2",
     "dayjs": "^1.10.3",
+    "jsonwebtoken": "^8.5.1",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vuetify": "^2.4.2",

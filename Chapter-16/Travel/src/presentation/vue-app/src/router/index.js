@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/views/Main/Home";
 import TourLists from "@/views/AdminDashboard/TourLists";
 import TourPackages from "@/views/AdminDashboard/TourPackages";
+import { authGuard } from "@/auth/auth.guard";
 
 Vue.use(VueRouter);
 
@@ -10,17 +11,26 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: {
+      requiresAuth: false,
+    },
   },
   /* lazy loading through dynamic import() */
   {
     path: "/about",
     name: "About",
     component: () => import("@/views/Main/About"),
+    meta: {
+      requiresAuth: false,
+    },
   },
   {
     path: "/admin-dashboard",
     component: () => import("@/views/AdminDashboard"),
+    meta: {
+      requiresAuth: true,
+    },
     children: [
       {
         path: "",
@@ -38,7 +48,7 @@ const routes = [
       {
         path: "tour-packages",
         component: TourPackages,
-      }
+      },
     ],
   },
   {
@@ -51,6 +61,11 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("router.beforeEach");
+  authGuard(to, from, next);
 });
 
 export default router;
