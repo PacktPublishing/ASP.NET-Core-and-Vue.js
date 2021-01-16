@@ -33,9 +33,15 @@ const mutations = {
   },
 
   [types.UPDATE_TOUR_PACKAGE](state, payload) {
-    const index = state.packagesOfSelectedCity.findIndex(
-      (pl) => pl.id === payload.id);
-    state.lists[index] = payload;
+    const packageIndex = state.packagesOfSelectedCity.findIndex(
+      (pl) => pl.id === payload.id
+    );
+    state.packagesOfSelectedCity[packageIndex] = payload;
+
+    const listIndex = state.lists.findIndex(
+      (l) => l.id === state.packagesOfSelectedCity.listId
+    );
+    state.lists[listIndex] = state.packagesOfSelectedCity;
   },
 };
 
