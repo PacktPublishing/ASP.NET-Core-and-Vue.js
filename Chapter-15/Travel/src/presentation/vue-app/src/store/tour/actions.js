@@ -3,6 +3,7 @@ import {
   getTourListsAxios,
   deleteTourListAxios,
   postTourListAxios,
+  deleteTourPackageAxios,
 } from "@/store/tour/services";
 
 // asynchronous action using Axios
@@ -55,4 +56,19 @@ export async function addTourListAction({ commit }, payload) {
 // non-asynchronous action
 export function getPackagesOfSelectedCityAction({ commit }, payload) {
   commit(types.GET_PACKAGES_OF_SELECTED_CITY, payload);
+}
+
+// asynchronous action using Axios
+export async function removeTourPackageAction({ commit }, payload) {
+  commit(types.LOADING_TOUR, true);
+
+  try {
+    await deleteTourPackageAxios(payload);
+    commit(types.REMOVE_TOUR_PACKAGE, payload);
+  } catch (e) {
+    alert(e);
+    console.log(e);
+  }
+
+  commit(types.LOADING_TOUR, false);
 }

@@ -21,6 +21,12 @@ const mutations = {
   [types.GET_PACKAGES_OF_SELECTED_CITY](state, packages) {
     state.packagesOfSelectedCity = packages;
   },
+
+  [types.REMOVE_TOUR_PACKAGE](state, id) {
+    state.packagesOfSelectedCity = state.packagesOfSelectedCity.filter(
+      (tp) => tp.id !== id
+    );
+  },
 };
 
 export default mutations;

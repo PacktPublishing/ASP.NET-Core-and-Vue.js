@@ -43,7 +43,9 @@
                     </div>
                   </v-list-item-content>
                   <v-list-item-action>
-                    <v-icon> mdi-delete-outline </v-icon>
+                    <v-icon @click="removeTourPackage(tourPackage.id)">
+                      mdi-delete-outline
+                    </v-icon>
                   </v-list-item-action>
                 </template>
               </v-list-item>
@@ -79,6 +81,15 @@ export default {
 
   methods: {
     ...mapActions("tourModule", ["removeTourPackageAction"]),
+
+    removeTourPackage(packageId) {
+      const confirmed = confirm(
+        "You sure you want to permanently delete this tour package?"
+      );
+      if (!confirmed) return;
+      // might need to wait for 1 min because of the cache
+      this.removeTourPackageAction(packageId);
+    },
   },
 };
 </script>

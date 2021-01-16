@@ -7,8 +7,7 @@
         <AddTourListForm />
       </div>
       <div v-if="showPackages">
-        <h2>Tour Packages Card Here</h2>
-        <h3>Add Tour Package Form with tour list Id Here</h3>
+        <TourPackagesCard />
       </div>
     </div>
   </div>
@@ -18,6 +17,7 @@
 import { mapActions } from "vuex";
 import TourListsCard from "@/components/TourListsCard";
 import AddTourListForm from "@/components/AddTourListForm";
+import TourPackagesCard from "@/components/TourPackagesCard";
 
 export default {
   name: "DefaultContent",
@@ -25,6 +25,7 @@ export default {
   components: {
     TourListsCard,
     AddTourListForm,
+    TourPackagesCard,
   },
 
   methods: {

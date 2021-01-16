@@ -11,3 +11,7 @@ export async function deleteTourListAxios(id) {
 export async function postTourListAxios(tourList) {
   return await api.post("TourLists", tourList);
 }
+
+export async function deleteTourPackageAxios(id) {
+  return await api.delete("TourPackages/" + id);
+}
