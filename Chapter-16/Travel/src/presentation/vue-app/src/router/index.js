@@ -52,6 +52,20 @@ const routes = [
     ],
   },
   {
+    path: "/login",
+    component: () => import("@/auth/views/Login"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/logout",
+    beforeEnter() {
+      localStorage.clear();
+      window.location.href = "/";
+    },
+  },
+  {
     path: "*",
     redirect: "/",
   },
