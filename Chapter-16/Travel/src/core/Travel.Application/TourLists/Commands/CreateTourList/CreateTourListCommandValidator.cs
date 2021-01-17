@@ -13,7 +13,7 @@ namespace Travel.Application.TourLists.Commands.CreateTourList
 
       RuleFor(v => v.City)
         .NotEmpty().WithMessage("City is required.")
-        .MaximumLength(90).WithMessage("City must not exceed 90 characters.");
+       .MaximumLength(90).WithMessage("City must not exceed 90 characters.");
 
       RuleFor(v => v.Country)
         .NotEmpty().WithMessage("Country is required")
