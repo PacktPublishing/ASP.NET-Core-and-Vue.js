@@ -4,6 +4,7 @@ import Home from "@/views/Main/Home";
 import TourLists from "@/views/AdminDashboard/TourLists";
 import TourPackages from "@/views/AdminDashboard/TourPackages";
 import { authGuard } from "@/auth/auth.guard";
+import { isTokenFromLocalStorageValid } from "@/auth/auth.service";
 
 Vue.use(VueRouter);
 
@@ -54,6 +55,22 @@ const routes = [
   {
     path: "/login",
     component: () => import("@/auth/views/Login"),
+    meta: {
+      requiresAuth: false,
+    },
+    beforeEnter: (to, from, next) => {
+      const valid = isTokenFromLocalStorageValid();
+      console.log("VALID::", valid);
+      if (valid) {
+        next("/continue-as");
+      } else {
+        next();
+      }
+    },
+  },
+  {
+    path: "/continue-as",
+    component: () => import("@/auth/views/ContinueAs"),
     meta: {
       requiresAuth: false,
     },

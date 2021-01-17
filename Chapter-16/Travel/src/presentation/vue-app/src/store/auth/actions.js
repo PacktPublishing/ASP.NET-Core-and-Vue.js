@@ -7,3 +7,12 @@ export async function loginUserAction({ commit }, payload) {
     commit(types.LOGIN_USER, data.token);
   } catch (e) {}
 }
+
+export function useLocalStorageTokenToSignIn({ commit }) {
+  if (!isTokenFromLocalStorageValid()) {
+    return;
+  }
+
+  const token = getToken();
+  commit(types.LOCAL_STORAGE_TOKEN_LOG_IN, token);
+}
