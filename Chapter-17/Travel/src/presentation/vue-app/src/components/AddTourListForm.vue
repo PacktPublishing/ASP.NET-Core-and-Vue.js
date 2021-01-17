@@ -31,6 +31,9 @@
                   <v-text-field
                     label="City"
                     v-model="bodyRequest.city"
+                    @input="$v.bodyRequest.city.$touch()"
+                    @blur="$v.bodyRequest.city.$touch()"
+                    :error-messages="cityErrors"
                     required
                   ></v-text-field>
                 </v-col>
@@ -39,6 +42,9 @@
                     :items="countryList"
                     label="Country"
                     v-model="bodyRequest.country"
+                    @input="$v.bodyRequest.country.$touch()"
+                    @blur="$v.bodyRequest.country.$touch()"
+                    :error-messages="countryErrors"
                     required
                   ></v-autocomplete>
                 </v-col>
@@ -46,6 +52,9 @@
                   <v-textarea
                     label="About"
                     v-model="bodyRequest.about"
+                    @input="$v.bodyRequest.about.$touch()"
+                    @blur="$v.bodyRequest.about.$touch()"
+                    :error-messages="aboutErrors"
                     required
                   ></v-textarea>
                 </v-col>
@@ -76,6 +85,7 @@
 <script>
 import { getCountryList } from "@/helpers/collections.ts";
 import { mapActions } from "vuex";
+import validators from "@/validators";
 
 export default {
   name: "AddTourListForm",
@@ -93,6 +103,45 @@ export default {
 
   methods: {
     ...mapActions("tourModule", ["addTourListAction"]),
+  },
+
+  computed: {
+    cityErrors() {
+      const errors = [];
+      if (!this.$v.bodyRequest.city.$dirty) return errors;
+
+      !this.$v.bodyRequest.city.required && errors.push("City is required");
+      !this.$v.bodyRequest.city.maxLength && errors.push("Max length is 90");
+
+      return errors;
+    },
+
+    countryErrors() {
+      const errors = [];
+      if (!this.$v.bodyRequest.country.$dirty) return errors;
+
+      !this.$v.bodyRequest.country.required &&
+        errors.push("Country is required");
+      // no need for max length because this is a dropdown with options
+      return errors;
+    },
+
+    aboutErrors() {
+      const errors = [];
+      if (!this.$v.bodyRequest.about.$dirty) return errors;
+
+      !this.$v.bodyRequest.about.required && errors.push("About is required");
+
+      return errors;
+    },
+  },
+
+  validations: {
+    bodyRequest: {
+      city: validators.city,
+      country: validators.country,
+      about: validators.about,
+    },
   },
 };
 </script>
