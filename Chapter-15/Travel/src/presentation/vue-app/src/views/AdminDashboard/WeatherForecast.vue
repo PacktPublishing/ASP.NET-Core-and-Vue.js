@@ -64,10 +64,10 @@ export default {
   async mounted() {
     this.loading = true;
     dayjs.extend(relativeTime);
-    await this.getTourListsAction();
-    this.cities = this.lists.map((pl) => pl.city);
     await this.fetchWeatherForecast(this.selectedCity);
     this.loading = false;
+    await this.getTourListsAction();
+    this.cities = this.lists.map((pl) => pl.city);
   },
 
   data() {
