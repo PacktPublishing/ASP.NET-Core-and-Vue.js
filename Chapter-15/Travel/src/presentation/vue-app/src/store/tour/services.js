@@ -20,6 +20,6 @@ export async function postTourPackageAxios(tourPackage) {
   return await api.post("TourPackages", tourPackage);
 }
 
-export async function putTourPackageAxios(tourtourPackageList) {
+export async function putTourPackageAxios(tourPackage) {
   return await api.put(`TourPackages/${tourPackage.id}`, tourPackage);
 }
