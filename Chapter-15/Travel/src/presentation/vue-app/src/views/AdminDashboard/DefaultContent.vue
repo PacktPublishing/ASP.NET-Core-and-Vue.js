@@ -52,11 +52,6 @@ export default {
     this.getTourListsAction();
     this.showPackages = false;
   },
-
-  handleShowPackages(show, listId) {
-    this.showPackages = show;
-    this.tourListId = listId;
-  },
 };
 </script>
 
