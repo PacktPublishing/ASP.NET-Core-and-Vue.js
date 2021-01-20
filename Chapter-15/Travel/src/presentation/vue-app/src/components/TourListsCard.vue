@@ -39,10 +39,6 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "TourListsCard",
 
-  props: {
-    handleShowPackages: Function,
-  },
-
   computed: {
     ...mapGetters("tourModule", {
       lists: "lists",
