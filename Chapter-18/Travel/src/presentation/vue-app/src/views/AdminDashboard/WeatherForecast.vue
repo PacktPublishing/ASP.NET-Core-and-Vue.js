@@ -67,7 +67,7 @@ export default {
     await this.fetchWeatherForecast(this.selectedCity);
     this.loading = false;
     await this.getTourListsAction();
-    this.cities = this.lists.map((pl) => pl.city);
+    this.cities = this.lists.map(pl => pl.city);
   },
 
   data() {
@@ -75,7 +75,7 @@ export default {
       weatherForecast: [],
       cities: [],
       selectedCity: "Oslo",
-      loading: false,
+      loading: false
     };
   },
 
@@ -86,7 +86,7 @@ export default {
       try {
         const { data } = await getWeatherForecastV2Axios(city);
         console.log(data);
-        this.weatherForecast = data?.map((w) => {
+        this.weatherForecast = data?.map(w => {
           const formattedData = { ...w };
           let date = w.date;
           formattedData.date = dayjs(date).fromNow();
@@ -125,13 +125,13 @@ export default {
         default:
           return "grey";
       }
-    },
+    }
   },
 
   computed: {
     ...mapGetters("tourModule", {
-      lists: "lists",
-    }),
-  },
+      lists: "lists"
+    })
+  }
 };
 </script>

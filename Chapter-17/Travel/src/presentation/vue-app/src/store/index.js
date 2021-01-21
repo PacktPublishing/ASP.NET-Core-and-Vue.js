@@ -13,7 +13,7 @@ const plugins = debug ? [createLogger({})] : [];
 export default new Vuex.Store({
   modules: {
     tourModule,
-    authModule,
+    authModule
   },
-  plugins,
+  plugins
 });

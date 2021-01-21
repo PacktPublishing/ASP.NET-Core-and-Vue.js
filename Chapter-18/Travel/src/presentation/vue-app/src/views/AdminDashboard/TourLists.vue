@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: "TourLists",
+  name: "TourLists"
 };
 </script>

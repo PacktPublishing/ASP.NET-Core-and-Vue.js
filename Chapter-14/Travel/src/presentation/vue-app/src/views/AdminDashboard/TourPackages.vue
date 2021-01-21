@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: "TourPackages",
+  name: "TourPackages"
 };
 </script>

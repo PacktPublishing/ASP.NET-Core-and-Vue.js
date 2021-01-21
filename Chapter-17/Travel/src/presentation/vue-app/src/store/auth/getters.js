@@ -1,9 +1,9 @@
 const getters = {
-  email: (state) => {
+  email: state => {
     return state.signInState.email;
   },
-  isAuthenticated: (state) => {
+  isAuthenticated: state => {
     return state.signInState.token;
-  },
+  }
 };
 export default getters;

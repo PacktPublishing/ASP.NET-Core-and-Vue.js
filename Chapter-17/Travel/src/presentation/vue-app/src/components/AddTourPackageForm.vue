@@ -87,8 +87,6 @@
   </v-row>
 </template>
 
-
-
 <script>
 import { mapActions } from "vuex";
 
@@ -97,8 +95,8 @@ export default {
 
   props: {
     tourListId: {
-      type: Number,
-    },
+      type: Number
+    }
   },
 
   data: () => ({
@@ -110,14 +108,14 @@ export default {
       mapLocation: "https://www.google.com/maps/place/...",
       price: 10,
       duration: 1,
-      instantConfirmation: true,
+      instantConfirmation: true
     },
 
     dialog: false,
     currencies: ["USD", "NOK"],
     currencyValues: [0, 1],
     durations: [1, 2, 3, 4, 5, 6, 7, 8],
-    durationValue: 1,
+    durationValue: 1
   }),
 
   methods: {
@@ -127,7 +125,7 @@ export default {
       this.bodyRequest.listId = this.tourListId;
       this.addTourPackageAction(this.bodyRequest); // triggers the method of the container holding this
       this.bodyRequest = {};
-    },
-  },
+    }
+  }
 };
 </script>

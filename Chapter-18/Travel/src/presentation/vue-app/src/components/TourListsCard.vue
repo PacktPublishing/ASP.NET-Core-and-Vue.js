@@ -32,7 +32,6 @@
   </v-card>
 </template>
 
-
 <script>
 import { mapActions, mapGetters } from "vuex";
 
@@ -40,20 +39,20 @@ export default {
   name: "TourListsCard",
 
   props: {
-    handleShowPackages: Function,
+    handleShowPackages: Function
   },
 
   computed: {
     ...mapGetters("tourModule", {
       lists: "lists",
-      loading: "loading",
-    }),
+      loading: "loading"
+    })
   },
 
   methods: {
     ...mapActions("tourModule", [
       "removeTourListAction",
-      "getPackagesOfSelectedCityAction",
+      "getPackagesOfSelectedCityAction"
     ]),
 
     removeTourList(listId) {
@@ -69,7 +68,7 @@ export default {
     addToPackages(packages, listId) {
       this.getPackagesOfSelectedCityAction(packages);
       this.$emit("handleShowPackages", true, listId);
-    },
-  },
+    }
+  }
 };
 </script>

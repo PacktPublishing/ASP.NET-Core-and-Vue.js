@@ -84,15 +84,15 @@ export default {
     bodyRequest: {
       city: "",
       country: "",
-      about: "",
+      about: ""
     },
 
     dialog: false,
-    countryList: getCountryList(),
+    countryList: getCountryList()
   }),
 
   methods: {
-    ...mapActions("tourModule", ["addTourListAction"]),
-  },
+    ...mapActions("tourModule", ["addTourListAction"])
+  }
 };
 </script>

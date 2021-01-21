@@ -28,7 +28,7 @@ export default {
     TourListsCard,
     AddTourListForm,
     TourPackagesCard,
-    AddTourPackageForm,
+    AddTourPackageForm
   },
 
   methods: {
@@ -36,25 +36,20 @@ export default {
     handleShowPackages(show, listId) {
       this.showPackages = show;
       this.tourListId = listId;
-    },
-  },
-
-  mounted() {
-    this.getTourListsAction();
+    }
   },
 
   data: () => ({
     showPackages: false,
-    tourListId: 0,
+    tourListId: 0
   }),
 
   mounted() {
     this.getTourListsAction();
     this.showPackages = false;
-  },
+  }
 };
 </script>
-
 
 <style scoped>
 .default-content {

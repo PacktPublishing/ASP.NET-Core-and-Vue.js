@@ -21,7 +21,7 @@ export default {
   name: "ContinueAs",
 
   data: () => ({
-    email: getUserEmailFromToken(),
+    email: getUserEmailFromToken()
   }),
 
   methods: {
@@ -31,7 +31,7 @@ export default {
     },
     onSubmit() {
       this.$router.push({ path: "/admin-dashboard" });
-    },
-  },
+    }
+  }
 };
 </script>

@@ -1,6 +1,6 @@
 const state = {
   lists: [],
-  loading: false,
+  loading: false
 };
 
 export default state;

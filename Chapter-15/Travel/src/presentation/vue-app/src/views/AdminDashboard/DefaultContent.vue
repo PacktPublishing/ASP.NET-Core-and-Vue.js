@@ -39,10 +39,6 @@ export default {
     },
   },
 
-  mounted() {
-    this.getTourListsAction();
-  },
-
   data: () => ({
     showPackages: false,
     tourListId: 0,

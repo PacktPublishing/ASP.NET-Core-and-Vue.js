@@ -2,23 +2,23 @@ import {
   required,
   email,
   minLength,
-  maxLength,
+  maxLength
 } from "vuelidate/lib/validators";
 
 export default {
   login: {
     email: { required, email },
-    password: { required, minLength: minLength(8) },
+    password: { required, minLength: minLength(8) }
   },
   city: {
     required,
-    maxLength: maxLength(90),
+    maxLength: maxLength(90)
   },
   country: {
     required,
-    maxLength: maxLength(60),
+    maxLength: maxLength(60)
   },
   about: {
-    required,
-  },
+    required
+  }
 };

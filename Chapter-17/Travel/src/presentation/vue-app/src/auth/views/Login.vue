@@ -127,8 +127,8 @@ export default {
     tab: null,
     login: {
       email: "",
-      password: "",
-    },
+      password: ""
+    }
   }),
 
   methods: {
@@ -142,7 +142,7 @@ export default {
 
     navigateHome() {
       router.push("/");
-    },
+    }
   },
 
   computed: {
@@ -165,11 +165,11 @@ export default {
         errors.push("Minimum characters is 8");
 
       return errors;
-    },
+    }
   },
 
   validations: {
-    login: validators.login,
-  },
+    login: validators.login
+  }
 };
 </script>

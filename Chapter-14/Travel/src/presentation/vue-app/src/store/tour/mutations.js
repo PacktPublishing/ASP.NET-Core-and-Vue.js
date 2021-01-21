@@ -7,7 +7,7 @@ const mutations = {
 
   [types.LOADING_TOUR](state, value) {
     state.loading = value;
-  },
+  }
 };
 
 export default mutations;

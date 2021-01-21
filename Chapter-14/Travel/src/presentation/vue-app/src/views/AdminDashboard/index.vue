@@ -74,7 +74,7 @@
 
 <script>
 export default {
-  name: "AdminDashboard",
+  name: "AdminDashboard"
 };
 </script>
 

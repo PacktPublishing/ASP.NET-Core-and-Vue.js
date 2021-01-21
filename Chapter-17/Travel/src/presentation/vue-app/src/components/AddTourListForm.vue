@@ -94,15 +94,15 @@ export default {
     bodyRequest: {
       city: "",
       country: "",
-      about: "",
+      about: ""
     },
 
     dialog: false,
-    countryList: getCountryList(),
+    countryList: getCountryList()
   }),
 
   methods: {
-    ...mapActions("tourModule", ["addTourListAction"]),
+    ...mapActions("tourModule", ["addTourListAction"])
   },
 
   computed: {
@@ -133,15 +133,15 @@ export default {
       !this.$v.bodyRequest.about.required && errors.push("About is required");
 
       return errors;
-    },
+    }
   },
 
   validations: {
     bodyRequest: {
       city: validators.city,
       country: validators.country,
-      about: validators.about,
-    },
-  },
+      about: validators.about
+    }
+  }
 };
 </script>

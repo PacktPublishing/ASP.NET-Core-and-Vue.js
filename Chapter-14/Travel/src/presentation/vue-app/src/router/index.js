@@ -16,7 +16,7 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () => import("@/views/Main/About"),
+    component: () => import("@/views/Main/About")
   },
   {
     path: "/admin-dashboard",
@@ -24,33 +24,33 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("@/views/AdminDashboard/DefaultContent"),
+        component: () => import("@/views/AdminDashboard/DefaultContent")
       },
       {
         path: "weather-forecast",
-        component: () => import("@/views/AdminDashboard/WeatherForecast"),
+        component: () => import("@/views/AdminDashboard/WeatherForecast")
       },
       /* eager loading through static import statement */
       {
         path: "tour-lists",
-        component: TourLists,
+        component: TourLists
       },
       {
         path: "tour-packages",
-        component: TourPackages,
+        component: TourPackages
       }
-    ],
+    ]
   },
   {
     path: "*",
-    redirect: "/",
-  },
+    redirect: "/"
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

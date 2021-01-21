@@ -79,8 +79,8 @@ export default {
 
   computed: {
     ...mapGetters("tourModule", {
-      packages: "packagesOfSelectedCity",
-    }),
+      packages: "packagesOfSelectedCity"
+    })
   },
 
   methods: {
@@ -93,8 +93,7 @@ export default {
       if (!confirmed) return;
       // might need to wait for 1 min because of the cache
       this.removeTourPackageAction(packageId);
-    },
-  },
+    }
+  }
 };
 </script>
-

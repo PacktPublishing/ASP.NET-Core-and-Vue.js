@@ -203,5 +203,5 @@ export const getCountryList = () => [
   "Virgin Islands (US)",
   "Yemen",
   "Zambia",
-  "Zimbabwe",
+  "Zimbabwe"
 ];
