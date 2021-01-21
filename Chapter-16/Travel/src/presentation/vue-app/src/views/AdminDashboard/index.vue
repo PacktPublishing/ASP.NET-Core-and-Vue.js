@@ -74,7 +74,28 @@
 
 <script>
 export default {
-  name: "AdminDashboard"
+  name: "AdminDashboard",
+
+  methods: {
+    ...mapActions("authModule", ["useLocalStorageTokenToSignInAction"]),
+    handleLogOut() {
+      logOut();
+    },
+    localstorageLogin() {
+      this.useLocalStorageTokenToSignInAction().then();
+    },
+  },
+
+  computed: {
+    ...mapGetters("authModule", {
+      isAuthenticated: "isAuthenticated",
+      email: "email",
+    }),
+  },
+
+  mounted() {
+    this.localstorageLogin();
+  },
 };
 </script>
 

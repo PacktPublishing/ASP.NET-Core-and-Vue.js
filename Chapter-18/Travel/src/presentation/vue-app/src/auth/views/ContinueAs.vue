@@ -15,23 +15,21 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 import { getUserEmailFromToken, logOut } from "@/auth/auth.service";
 export default {
   name: "ContinueAs",
 
   data: () => ({
-    email: getUserEmailFromToken()
+    email: getUserEmailFromToken(),
   }),
 
   methods: {
-    ...mapActions("authModule", ["useLocalStorageTokenToSignIn"]),
     handleLogOut() {
       logOut();
     },
     onSubmit() {
       this.$router.push({ path: "/admin-dashboard" });
-    }
-  }
+    },
+  },
 };
 </script>

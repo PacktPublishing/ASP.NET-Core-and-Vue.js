@@ -14,7 +14,7 @@ export async function loginUserAction({ commit }, payload) {
   }
 }
 
-export function useLocalStorageTokenToSignIn({ commit }) {
+export function useLocalStorageTokenToSignInAction({ commit }) {
   if (!isTokenFromLocalStorageValid()) {
     return;
   }
