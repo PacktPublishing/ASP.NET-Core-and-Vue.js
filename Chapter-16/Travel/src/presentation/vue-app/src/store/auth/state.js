@@ -3,8 +3,8 @@ const state = {
     email: "",
     exp: Date.now(),
     sub: "",
-    token: null,
-  },
+    token: null
+  }
 };
 
 export default state;

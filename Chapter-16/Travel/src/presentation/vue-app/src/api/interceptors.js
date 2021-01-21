@@ -12,8 +12,8 @@ export function interceptorsInit(axiosInstance) {
   });
 
   axiosInstance.interceptors.response.use(
-    (response) => response,
-    (error) =>
+    response => response,
+    error =>
       Promise.reject(
         (error.response && error.response.data) || "Something went wrong"
       )

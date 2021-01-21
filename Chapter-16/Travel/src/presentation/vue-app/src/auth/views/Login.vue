@@ -120,8 +120,8 @@ export default {
     tab: null,
     login: {
       email: "",
-      password: "",
-    },
+      password: ""
+    }
   }),
 
   methods: {
@@ -135,7 +135,7 @@ export default {
 
     navigateHome() {
       router.push("/");
-    },
-  },
+    }
+  }
 };
 </script>

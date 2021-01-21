@@ -10,7 +10,7 @@ const mutations = {
   },
 
   [types.REMOVE_TOUR_LIST](state, id) {
-    state.lists = state.lists.filter((tl) => tl.id !== id);
+    state.lists = state.lists.filter(tl => tl.id !== id);
     state.packagesOfSelectedCity = [];
   },
 
@@ -24,7 +24,7 @@ const mutations = {
 
   [types.REMOVE_TOUR_PACKAGE](state, id) {
     state.packagesOfSelectedCity = state.packagesOfSelectedCity.filter(
-      (tp) => tp.id !== id
+      tp => tp.id !== id
     );
   },
 
@@ -34,15 +34,15 @@ const mutations = {
 
   [types.UPDATE_TOUR_PACKAGE](state, payload) {
     const packageIndex = state.packagesOfSelectedCity.findIndex(
-      (pl) => pl.id === payload.id
+      pl => pl.id === payload.id
     );
     state.packagesOfSelectedCity[packageIndex] = payload;
 
     const listIndex = state.lists.findIndex(
-      (l) => l.id === state.packagesOfSelectedCity.listId
+      l => l.id === state.packagesOfSelectedCity.listId
     );
     state.lists[listIndex] = state.packagesOfSelectedCity;
-  },
+  }
 };
 
 export default mutations;

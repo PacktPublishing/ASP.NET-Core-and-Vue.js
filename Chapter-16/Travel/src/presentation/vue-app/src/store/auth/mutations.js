@@ -13,7 +13,7 @@ const mutations = {
     state.signInState.token = token;
     const loginClaim = jwt.decode(token);
     claimToState(state, loginClaim);
-  },
+  }
 };
 
 export default mutations;

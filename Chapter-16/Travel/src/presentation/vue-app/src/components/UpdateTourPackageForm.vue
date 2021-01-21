@@ -79,7 +79,6 @@
   </v-row>
 </template>
 
-
 <script>
 import { mapActions } from "vuex";
 
@@ -97,9 +96,9 @@ export default {
         mapLocation: "missing map location",
         price: 0,
         duration: 0,
-        instantConfirmation: true,
-      },
-    },
+        instantConfirmation: true
+      }
+    }
   },
 
   methods: {
@@ -107,7 +106,7 @@ export default {
 
     onSubmit() {
       this.updateTourPackageAction(this.bodyRequest); // fyi, you might not see the results right away because of the cache.
-    },
+    }
   },
 
   data: () => ({
@@ -115,7 +114,7 @@ export default {
     currencies: ["USD", "NOK"],
     currencyValues: [0, 1],
     durations: [1, 2, 3, 4, 5, 6, 7, 8],
-    durationValue: 1,
-  }),
+    durationValue: 1
+  })
 };
 </script>

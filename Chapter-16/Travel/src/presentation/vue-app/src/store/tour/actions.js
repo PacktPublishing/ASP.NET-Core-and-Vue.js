@@ -5,7 +5,7 @@ import {
   postTourListAxios,
   deleteTourPackageAxios,
   postTourPackageAxios,
-  putTourPackageAxios,
+  putTourPackageAxios
 } from "@/store/tour/services";
 
 // asynchronous action using Axios
