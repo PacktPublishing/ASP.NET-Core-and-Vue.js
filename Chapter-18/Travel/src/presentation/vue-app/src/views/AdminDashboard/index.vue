@@ -16,7 +16,7 @@
 
         <v-list-item link>
           <v-list-item-content>
-            <v-list-item-subtitle>email here</v-list-item-subtitle>
+            <v-list-item-subtitle>{{ email }}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -73,31 +73,30 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "AdminDashboard",
 
   methods: {
     ...mapActions("authModule", ["useLocalStorageTokenToSignInAction"]),
-    handleLogOut() {
-      logOut();
-    },
     localstorageLogin() {
       this.useLocalStorageTokenToSignInAction().then();
-    },
+    }
   },
 
   computed: {
     ...mapGetters("authModule", {
       isAuthenticated: "isAuthenticated",
-      email: "email",
-    }),
+      email: "email"
+    })
   },
 
   mounted() {
     this.localstorageLogin();
-  },
+  }
 };
 </script>
+
 <style scoped>
 .link {
   text-decoration: none;
