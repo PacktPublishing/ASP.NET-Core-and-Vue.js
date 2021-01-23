@@ -2,7 +2,7 @@ import * as types from "./types";
 import {
   loginUserAxios,
   isTokenFromLocalStorageValid,
-  getToken,
+  getToken
 } from "@/auth/auth.service";
 
 export async function loginUserAction({ commit }, payload) {
