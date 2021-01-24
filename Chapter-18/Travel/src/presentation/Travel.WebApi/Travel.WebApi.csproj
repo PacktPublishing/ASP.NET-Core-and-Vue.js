@@ -33,6 +33,7 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Extensions\" />
+        <Folder Include="Logs" />
     </ItemGroup>
     <!-- Below is for Single Page Application. -->
     <!-- Please wait for compilation to finish before going to https://localhost:5001 -->
