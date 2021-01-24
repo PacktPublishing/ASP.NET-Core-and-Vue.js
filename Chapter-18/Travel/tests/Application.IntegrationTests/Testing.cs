@@ -93,7 +93,7 @@ namespace Application.IntegrationTests
             return await context.FindAsync<TEntity>(id);
         }
 
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             // Code to run after all tests
         }
