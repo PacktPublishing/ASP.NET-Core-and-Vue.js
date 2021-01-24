@@ -1,4 +1,3 @@
-using System.Linq;
 using Travel.Application.Common.Exceptions;
 using Travel.Application.TourLists.Commands.CreateTourList;
 using Travel.Application.TourPackages.Commands.CreateTourPackage;
@@ -24,7 +23,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         [Fact]
         public void ShouldRequireValidTourPackageId()
         {
-            var command = new UpdateTourPackageCommand()
+            var command = new UpdateTourPackageCommand
             {
                 Id = 4,
                 Name = "Free Walking Tour"
@@ -43,7 +42,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
                 About = "Lorem Ipsum"
             });
 
-            var packageId = await SendAsync(new CreateTourPackageCommand()
+            var packageId = await SendAsync(new CreateTourPackageCommand
             {
                 ListId = listId,
                 Name = "Free Walking Tour Rabat",
@@ -96,15 +95,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
                 Name = "Salt Cathedral Tour"
             };
 
-            FluentActions.Invoking(() =>
-                    SendAsync(command))
-                      .Should()
-                      .Throw<ValidationException>()
-                      .Where(ex => ex.Errors.ContainsKey("Name"))
-                      .And
-                      .Errors["Name"]
-                      .Should()
-                      .Contain("The specified name already exists.");
+            FluentActions.Invoking(() => SendAsync(command))
+                .Should()
+                .Throw<FluentValidation.ValidationException>();
         }
     }
 }
