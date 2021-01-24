@@ -1,13 +1,13 @@
 using System.Linq;
-using System.Threading.Tasks;
-using FluentAssertions;
 using Travel.Application.Common.Exceptions;
 using Travel.Application.TourLists.Commands.CreateTourList;
 using Travel.Application.TourPackages.Commands.CreateTourPackage;
 using Travel.Application.TourPackages.Commands.UpdateTourPackage;
 using Travel.Domain.Entities;
+using FluentAssertions;
+using System.Threading.Tasks;
 using Xunit;
-using ValidationException = FluentValidation.ValidationException;
+
 
 namespace Application.IntegrationTests.TourPackages.Commands
 {
@@ -67,7 +67,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
             item.Name.Should().Be(command.Name);
             item.WhatToExpect.Should().NotBeNull();
         }
-        
+
         [Fact]
         public async Task ShouldRequireUniqueName()
         {
@@ -77,7 +77,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
                 Country = "Colombia",
                 About = "Lorem Ipsum"
             });
-            
+
             await SendAsync(new CreateTourPackageCommand
             {
                 ListId = listId,
@@ -88,7 +88,6 @@ namespace Application.IntegrationTests.TourPackages.Commands
             {
                 ListId = listId,
                 Name = "Salt Cathedral Tour"
-                
             });
 
             var command = new UpdateTourPackageCommand
@@ -97,10 +96,15 @@ namespace Application.IntegrationTests.TourPackages.Commands
                 Name = "Salt Cathedral Tour"
             };
 
-            FluentActions.Invoking(() => SendAsync(command))
-                .Should().Throw<ValidationException>()
-                .Where(ex => true);
+            FluentActions.Invoking(() =>
+                    SendAsync(command))
+                      .Should()
+                      .Throw<ValidationException>()
+                      .Where(ex => ex.Errors.ContainsKey("Name"))
+                      .And
+                      .Errors["Name"]
+                      .Should()
+                      .Contain("The specified name already exists.");
         }
-      
     }
 }
