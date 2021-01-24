@@ -6,16 +6,16 @@ using Travel.Data.Contexts;
 
 namespace Travel.Data
 {
-  public static class DependencyInjection
-  {
-    public static IServiceCollection AddInfrastructureData(this IServiceCollection services, IConfiguration config)
+    public static class DependencyInjection
     {
-      services.AddDbContext<ApplicationDbContext>(options => options
-        .UseSqlite(config.GetConnectionString("DefaultConnection")));
+        public static IServiceCollection AddInfrastructureData(this IServiceCollection services, IConfiguration config)
+        {
+            services.AddDbContext<ApplicationDbContext>(options => options
+                .UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
-      services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
-      return services;
+            return services;
+        }
     }
-  }
 }
