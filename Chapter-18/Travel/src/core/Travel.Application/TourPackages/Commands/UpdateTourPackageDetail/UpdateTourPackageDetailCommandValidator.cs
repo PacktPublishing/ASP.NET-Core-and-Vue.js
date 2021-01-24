@@ -1,7 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using System.Threading;
-using System.Threading.Tasks;
 using Travel.Application.Common.Interfaces;
 
 namespace Travel.Application.TourPackages.Commands.UpdateTourPackageDetail
@@ -24,16 +21,6 @@ namespace Travel.Application.TourPackages.Commands.UpdateTourPackageDetail
         .NotEmpty().WithMessage("Price is required");
       RuleFor(v => v.Duration)
         .NotEmpty().WithMessage("Duration is required");
-      RuleFor(v => v.InstantConfirmation)
-        .NotEmpty().WithMessage("InstantConfirmation is required");
-      RuleFor(v => v.Currency)
-        .NotEmpty().WithMessage("Currency is required");
-    }
-
-    public async Task<bool> BeUniqueName(string name, CancellationToken cancellationToken)
-    {
-      return await _context.TourPackages
-        .AllAsync(l => l.Name != name);
     }
   }
 }

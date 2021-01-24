@@ -23,13 +23,13 @@ namespace Application.UnitTests.Common.Exceptions
         {
             var failures = new List<ValidationFailure>
             {
-                new ("Game", "Game is required.")
+                new ("Mobile", "Mobile is required.")
             };
 
             var actual = new ValidationException(failures).Errors;
 
-            actual.Keys.Should().BeEquivalentTo("Game");
-            actual["Game"].Should().BeEquivalentTo("Game is required.");
+            actual.Keys.Should().BeEquivalentTo("Mobile");
+            actual["Mobile"].Should().BeEquivalentTo("Mobile is required.");
         }
     }
 }

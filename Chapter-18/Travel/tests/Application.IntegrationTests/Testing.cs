@@ -48,7 +48,7 @@ namespace Application.IntegrationTests
 
             _scopeFactory = services.BuildServiceProvider().GetService<IServiceScopeFactory>();
 
-            _checkpoint = new Checkpoint()
+            _checkpoint = new Checkpoint
             {
                 TablesToIgnore = new[] { "__EFMigrationsHistory" }
             };
@@ -81,6 +81,16 @@ namespace Application.IntegrationTests
             var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
             context.Add(entity);
             await context.SaveChangesAsync();
+        }
+        
+        public static async Task<TEntity> FindAsync<TEntity>(int id)
+            where TEntity : class
+        {
+            using var scope = _scopeFactory.CreateScope();
+
+            var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+
+            return await context.FindAsync<TEntity>(id);
         }
 
         public void Dispose()

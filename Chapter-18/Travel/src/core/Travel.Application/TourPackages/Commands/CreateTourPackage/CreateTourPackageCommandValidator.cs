@@ -23,10 +23,10 @@ namespace Travel.Application.TourPackages.Commands.CreateTourPackage
         .NotEmpty().WithMessage("ListId is required");
     }
 
-    public async Task<bool> BeUniqueName(string name, CancellationToken cancellationToken)
+    private async Task<bool> BeUniqueName(string name, CancellationToken cancellationToken)
     {
       return await _context.TourPackages
-        .AllAsync(l => l.Name != name);
+        .AllAsync(l => l.Name != name, cancellationToken);
     }
   }
 }

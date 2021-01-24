@@ -41,7 +41,7 @@ namespace Travel.Application.TourPackages.Commands.CreateTourPackage
         InstantConfirmation = request.InstantConfirmation,
         Currency = request.Currency
       };
-      _context.TourPackages.Add(entity);
+      await _context.TourPackages.AddAsync(entity, cancellationToken);
       await _context.SaveChangesAsync(cancellationToken);
 
       return entity.Id;
