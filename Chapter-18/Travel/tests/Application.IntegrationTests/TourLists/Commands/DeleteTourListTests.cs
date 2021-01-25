@@ -19,7 +19,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public void ShouldRequireValidTourListId()
+        public void Should_Require_Valid_TourList_Id()
         {
             var command = new DeleteTourListCommand
             {
@@ -30,7 +30,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public async Task ShouldDeleteTourList()
+        public async Task Should_Delete_TourList()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {

@@ -19,7 +19,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public void ShouldRequiredValidTourListId()
+        public void Should_Required_Valid_TourList_Id()
         {
             var command = new UpdateTourListCommand
             {
@@ -33,7 +33,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public async Task ShouldUpdateTodoList()
+        public async Task Should_Update_TodoList()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {

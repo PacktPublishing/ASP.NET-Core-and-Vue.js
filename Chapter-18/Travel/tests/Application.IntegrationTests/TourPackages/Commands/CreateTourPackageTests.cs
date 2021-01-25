@@ -19,7 +19,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public void ShouldRequireMinimumFields()
+        public void Should_Require_Minimum_Fields()
         {
             var command = new CreateTourPackageCommand();
 
@@ -27,9 +27,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task ShouldCreateTourPackage()
+        public async Task Should_Create_TourPackage()
         {
-            var listId = await SendAsync(new CreateTourListCommand()
+            var listId = await SendAsync(new CreateTourListCommand
             {
                 City = "New York",
                 Country = "USA",

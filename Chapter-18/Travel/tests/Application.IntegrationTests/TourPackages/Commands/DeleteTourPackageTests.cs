@@ -20,7 +20,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public void ShouldRequireValidTourPackageId()
+        public void Should_Require_Valid_TourPackage_Id()
         {
             var command = new DeleteTourPackageCommand
             {
@@ -31,27 +31,27 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task ShouldDeleteTourPackage()
+        public async Task Should_Delete_TourPackage()
         {
-            var listId = await SendAsync(new CreateTourListCommand()
+            var listId = await SendAsync(new CreateTourListCommand
             {
                 City = "Tashkent",
                 Country = "Uzbekistan",
                 About = "Lorem Ipsum"
             });
 
-            var packageId = await SendAsync(new CreateTourPackageCommand()
+            var packageId = await SendAsync(new CreateTourPackageCommand
             {
                 ListId = listId,
                 Name = "Silk Road Adventures",
                 Duration = 8,
-                Price = 800,
+                Price = 80,
                 InstantConfirmation = false,
-                MapLocation = "google.com",
+                MapLocation = "Lorem Ipsum",
                 WhatToExpect = "Lorem Ipsum"
             });
 
-            await SendAsync(new DeleteTourPackageCommand()
+            await SendAsync(new DeleteTourPackageCommand
             {
                 Id = packageId
             });

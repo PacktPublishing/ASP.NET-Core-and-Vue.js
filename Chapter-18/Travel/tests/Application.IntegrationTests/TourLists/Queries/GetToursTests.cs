@@ -18,7 +18,7 @@ namespace Application.IntegrationTests.TourLists.Queries
         }
 
         [Fact]
-        public async Task ShouldReturnTourLists()
+        public async Task Should_Return_TourLists()
         {
             var query = new GetToursQuery();
             var result = await SendAsync(query);
@@ -27,7 +27,7 @@ namespace Application.IntegrationTests.TourLists.Queries
         }
 
         [Fact]
-        public async Task ShouldReturnAllTourListsAndPackages()
+        public async Task Should_Return_All_TourLists_And_Packages()
         {
             await AddAsync(new TourList
             {

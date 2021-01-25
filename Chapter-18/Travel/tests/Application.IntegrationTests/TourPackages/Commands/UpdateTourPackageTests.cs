@@ -21,7 +21,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public void ShouldRequireValidTourPackageId()
+        public void Should_Require_Valid_TourPackage_Id()
         {
             var command = new UpdateTourPackageCommand
             {
@@ -33,9 +33,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task ShouldUpdateTourPackage()
+        public async Task Should_Update_TourPackage()
         {
-            var listId = await SendAsync(new CreateTourListCommand()
+            var listId = await SendAsync(new CreateTourListCommand
             {
                 City = "Rabat",
                 Country = "Morocco",
@@ -68,7 +68,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task ShouldRequireUniqueName()
+        public async Task Should_Require_Unique_Name()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {

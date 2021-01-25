@@ -21,9 +21,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public void ShouldRequireValidTourPackageId()
+        public void Should_Require_Valid_TourPackage_Id()
         {
-            var command = new UpdateTourPackageCommand()
+            var command = new UpdateTourPackageCommand
             {
                 Id = 88,
                 Name = "Free Walking Tour"
@@ -33,7 +33,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task ShouldUpdateTourPackage()
+        public async Task Should_Update_TourPackage()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {
