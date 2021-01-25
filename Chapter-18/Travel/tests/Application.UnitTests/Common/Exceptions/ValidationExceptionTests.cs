@@ -9,17 +9,16 @@ namespace Application.UnitTests.Common.Exceptions
 {
     public class ValidationExceptionTests
     {
-
         [Fact]
-        public void DefaultConstructorCreatesAnEmptyErrorDictionary()
+        public void Default_Constructor_Creates_An_Empty_Error_Dictionary()
         {
             var actual = new ValidationException().Errors;
 
             actual.Keys.Should().BeEquivalentTo(Array.Empty<string>());
         }
-
+        
         [Fact]
-        public void SingleValidationFailureCreatesASingleElementErrorDictionary()
+        public void Single_Validation_Failure_Creates_A_Single_Element_Error_Dictionary()
         {
             var failures = new List<ValidationFailure>
             {

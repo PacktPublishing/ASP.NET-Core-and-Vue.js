@@ -17,7 +17,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         {
             ResetState().GetAwaiter().GetResult();
         }
-
+        
         [Fact]
         public void Should_Require_Minimum_Fields()
         {
