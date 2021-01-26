@@ -20,6 +20,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\core\Travel.Application\Travel.Application.csproj" />
-    <ProjectReference Include="..\..\src\infrastructure\Travel.Shared\Travel.Shared.csproj" />
   </ItemGroup>
 </Project>
