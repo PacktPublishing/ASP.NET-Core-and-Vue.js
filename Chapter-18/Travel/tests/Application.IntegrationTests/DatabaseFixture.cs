@@ -10,22 +10,16 @@ using Moq;
 using Respawn;
 using Travel.Data.Contexts;
 using Travel.WebApi;
-using Xunit;
 
 namespace Application.IntegrationTests
 {
-    [CollectionDefinition("Database collection")]
-    public class DatabaseCollection : ICollectionFixture<Testing>
-    {
-    }
-
-    public class Testing : IDisposable
+    public class DatabaseFixture : IDisposable
     {
         private static IConfigurationRoot _configuration;
         private static IServiceScopeFactory _scopeFactory;
         private static Checkpoint _checkpoint;
 
-        public Testing()
+        public DatabaseFixture()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -37,7 +31,6 @@ namespace Application.IntegrationTests
             var startup = new Startup(_configuration);
             var services = new ServiceCollection();
 
-            
             services.AddSingleton(Mock.Of<IWebHostEnvironment>(w =>
                 w.EnvironmentName == "Development" &&
                 w.ApplicationName == "Travel.WebApi"));

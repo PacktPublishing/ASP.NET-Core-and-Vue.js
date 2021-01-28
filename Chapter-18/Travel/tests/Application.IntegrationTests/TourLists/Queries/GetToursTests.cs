@@ -7,9 +7,9 @@ using Xunit;
 
 namespace Application.IntegrationTests.TourLists.Queries
 {
-    using static Testing;
+    using static DatabaseFixture;
 
-    [Collection("Database collection")]
+    [Collection("DatabaseCollection")]
     public class GetToursTests
     {
         public GetToursTests()

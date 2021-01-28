@@ -9,9 +9,9 @@ using Xunit;
 
 namespace Application.IntegrationTests.TourPackages.Commands
 {
-    using static Testing;
+    using static DatabaseFixture;
 
-    [Collection("Database collection")]
+    [Collection("DatabaseCollection")]
     public class DeleteTourPackageTests
     {
         public DeleteTourPackageTests()
