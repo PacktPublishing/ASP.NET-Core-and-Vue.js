@@ -18,7 +18,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public void Should_Require_Minimum_Fields()
+        public void ShouldRequireMinimumFields()
         {
             var command = new CreateTourListCommand();
 
@@ -26,7 +26,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public void Should_Require_About()
+        public void ShouldRequireAbout()
         {
             var command = new CreateTourListCommand
             {
@@ -39,7 +39,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public async Task Should_Create_TourList()
+        public async Task ShouldCreateTourList()
         {
             var command = new CreateTourListCommand
             {

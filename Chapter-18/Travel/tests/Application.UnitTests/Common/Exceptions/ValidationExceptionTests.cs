@@ -10,7 +10,7 @@ namespace Application.UnitTests.Common.Exceptions
     public class ValidationExceptionTests
     {
         [Fact]
-        public void Default_Constructor_Creates_An_Empty_Error_Dictionary()
+        public void DefaultConstructorCreatesAnEmptyErrorDictionary()
         {
             var actual = new ValidationException().Errors;
 
@@ -18,7 +18,7 @@ namespace Application.UnitTests.Common.Exceptions
         }
         
         [Fact]
-        public void Single_Validation_Failure_Creates_A_Single_Element_Error_Dictionary()
+        public void SingleValidationFailureCreatesASingleElementErrorDictionary()
         {
             var failures = new List<ValidationFailure>
             {

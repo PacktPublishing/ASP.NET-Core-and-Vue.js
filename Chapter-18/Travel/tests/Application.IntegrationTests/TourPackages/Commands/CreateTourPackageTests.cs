@@ -19,7 +19,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
         
         [Fact]
-        public void Should_Require_Minimum_Fields()
+        public void ShouldRequireMinimumFields()
         {
             var command = new CreateTourPackageCommand();
 
@@ -27,7 +27,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task Should_Create_TourPackage()
+        public async Task ShouldCreateTourPackage()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {

@@ -21,7 +21,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public void Should_Require_Valid_TourPackage_Id()
+        public void ShouldRequireValidTourPackageId()
         {
             var command = new UpdateTourPackageCommand
             {
@@ -33,7 +33,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task Should_Update_TourPackage()
+        public async Task ShouldUpdateTourPackage()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {
@@ -68,7 +68,7 @@ namespace Application.IntegrationTests.TourPackages.Commands
         }
 
         [Fact]
-        public async Task Should_Require_Unique_Name()
+        public async Task ShouldRequireUniqueName()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {

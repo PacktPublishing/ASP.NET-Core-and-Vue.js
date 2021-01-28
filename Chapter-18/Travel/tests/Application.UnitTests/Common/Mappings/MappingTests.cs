@@ -26,7 +26,7 @@ namespace Application.UnitTests.Common.Mappings
         /// Should have valid mapper configurations.
         /// </summary>
         [Fact]
-        public void Should_Have_Valid_Configuration()
+        public void ShouldHaveValidConfiguration()
         {
             _configuration.AssertConfigurationIsValid();
         }
@@ -34,7 +34,7 @@ namespace Application.UnitTests.Common.Mappings
         [Theory]
         [InlineData(typeof(TourList), typeof(TourListDto))]
         [InlineData(typeof(TourPackage), typeof(TourPackageDto))]
-        public void Should_Support_Mapping_From_Source_To_Destination(Type source, Type destination)
+        public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
         {
             var instance = Activator.CreateInstance(source);
 
