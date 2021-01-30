@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using FluentAssertions;
-using FluentValidation;
+using Travel.Application.Common.Exceptions;
 using Travel.Application.TourLists.Commands.CreateTourList;
 using Travel.Domain.Entities;
 using Xunit;

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ using Travel.Identity;
 using Travel.Identity.Helpers;
 using Travel.Shared;
 using Travel.WebApi.Extensions;
+using Travel.WebApi.Filters;
 using Travel.WebApi.Helpers;
 using VueCliMiddleware;
 
@@ -36,6 +38,11 @@ namespace Travel.WebApi
 
             services.AddHttpContextAccessor();
             services.AddControllers();
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilter()));
+            services.Configure<ApiBehaviorOptions>(options =>
+                options.SuppressModelStateInvalidFilter = true
+            );
 
             services.AddApiVersioningExtension();
             services.AddVersionedApiExplorerExtension();
@@ -44,10 +51,7 @@ namespace Travel.WebApi
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             // NOTE: PRODUCTION Ensure this is the same path that is specified in your webpack output
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "../vue-app/dist";
-            });
+            services.AddSpaStaticFiles(configuration => { configuration.RootPath = "../vue-app/dist"; });
 
             services.AddCors();
         }
@@ -60,7 +64,13 @@ namespace Travel.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerExtension(provider);
             }
-
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
@@ -79,10 +89,7 @@ namespace Travel.WebApi
             app.UseRouting();
             app.UseMiddleware<JwtMiddleware>();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
             app.UseSpa(spa =>
             {

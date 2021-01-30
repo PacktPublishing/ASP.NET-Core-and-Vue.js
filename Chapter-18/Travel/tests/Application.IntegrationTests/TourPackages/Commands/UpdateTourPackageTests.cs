@@ -7,7 +7,6 @@ using FluentAssertions;
 using System.Threading.Tasks;
 using Xunit;
 
-
 namespace Application.IntegrationTests.TourPackages.Commands
 {
     using static DatabaseFixture;
@@ -97,7 +96,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
 
             FluentActions.Invoking(() => SendAsync(command))
                 .Should()
-                .Throw<FluentValidation.ValidationException>();
+                .Throw<ValidationException>()
+                .Where(ex => ex.Errors.ContainsKey("Name"))
+                .And.Errors["Name"].Should().Contain("The specified name already exists.");
         }
     }
 }

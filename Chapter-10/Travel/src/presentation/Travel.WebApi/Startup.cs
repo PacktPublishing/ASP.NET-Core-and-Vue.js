@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ using Travel.Identity;
 using Travel.Identity.Helpers;
 using Travel.Shared;
 using Travel.WebApi.Extensions;
+using Travel.WebApi.Filters;
 using Travel.WebApi.Helpers;
 
 namespace Travel.WebApi
@@ -35,6 +37,11 @@ namespace Travel.WebApi
 
             services.AddHttpContextAccessor();
             services.AddControllers();
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilter()));
+            services.Configure<ApiBehaviorOptions>(options =>
+                options.SuppressModelStateInvalidFilter = true
+            );
 
             services.AddApiVersioningExtension();
             services.AddVersionedApiExplorerExtension();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using ValidationException = Travel.Application.Common.Exceptions.ValidationException;
 
 namespace Travel.Application.Common.Behaviors
 {

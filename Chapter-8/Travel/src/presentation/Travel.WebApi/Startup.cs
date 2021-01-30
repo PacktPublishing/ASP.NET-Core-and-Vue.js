@@ -10,6 +10,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Travel.Application;
 using Travel.Data;
 using Travel.Shared;
+using Travel.WebApi.Filters;
 using Travel.WebApi.Helpers;
 
 namespace Travel.WebApi
@@ -33,6 +34,13 @@ namespace Travel.WebApi
             services.AddHttpContextAccessor();
 
             services.AddControllers();
+
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilter()));
+            services.Configure<ApiBehaviorOptions>(options =>
+                options.SuppressModelStateInvalidFilter = true
+            );
+
             services.AddSwaggerGen(c =>
             {
                 c.OperationFilter<SwaggerDefaultValues>();
