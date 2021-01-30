@@ -98,7 +98,9 @@ namespace Application.IntegrationTests.TourPackages.Commands
                 .Should()
                 .Throw<ValidationException>()
                 .Where(ex => ex.Errors.ContainsKey("Name"))
-                .And.Errors["Name"].Should().Contain("The specified name already exists.");
+                .And.Errors["Name"]
+                .Should()
+                .Contain("The specified name already exists.");
         }
     }
 }
