@@ -55,17 +55,17 @@ namespace Application.IntegrationTests
             var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
             context.Database.Migrate();
         }
+        
+        public static async Task ResetState()
+        {
+            await _checkpoint.Reset(_configuration.GetConnectionString("DefaultConnection"));
+        }
 
         public static async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
         {
             using var scope = _scopeFactory.CreateScope();
             var mediator = scope.ServiceProvider.GetService<IMediator>();
             return await mediator.Send(request);
-        }
-
-        public static async Task ResetState()
-        {
-            await _checkpoint.Reset(_configuration.GetConnectionString("DefaultConnection"));
         }
 
         public static async Task AddAsync<TEntity>(TEntity entity) where TEntity : class
