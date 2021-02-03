@@ -33,7 +33,7 @@ namespace Application.IntegrationTests.TourLists.Commands
         }
 
         [Fact]
-        public async Task ShouldUpdateTodoList()
+        public async Task ShouldUpdateTourList()
         {
             var listId = await SendAsync(new CreateTourListCommand
             {
