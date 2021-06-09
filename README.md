@@ -10,12 +10,12 @@ This is the code repository for [ASP.NET Core and Vue.js](https://www.packtpub.c
 Vue.js 3 is faster and smaller than the previous version, and TypeScript’s full support out of the box makes it a more maintainable and easier-to-use version of Vue.js. Then, there's ASP.NET Core 5, which is the fastest .NET web framework today. Together, Vue.js for the frontend and ASP.NET Core 5 for the backend make a powerful combination. This book follows a hands-on approach to implementing practical methodologies for building robust applications using ASP.NET Core 5 and Vue.js 3. The topics here are not deep dive and the book is intended for busy .NET developers who have limited time and want a quick implementation of a clean architecture with popular libraries. 
 
 This book covers the following exciting features:
-Discover CQRS and mediator patterns in the ASP.NET Core 5 web API
-Use Serilog, MediatR, FluentValidation, and Redis in ASP.NET
-Explore common Vue.js packages such as Vuelidate, Vuetify, and Vuex
-Manage complex app states using the Vuex state management library
-Write integration tests in ASP.NET Core using xUnit and FluentAssertions
-Deploy your app to Microsoft Azure using the new GitHub Actions for continuous integration and continuous deployment (CI/CD)
+* Discover CQRS and mediator patterns in the ASP.NET Core 5 web API
+* Use Serilog, MediatR, FluentValidation, and Redis in ASP.NET
+* Explore common Vue.js packages such as Vuelidate, Vuetify, and Vuex
+* Manage complex app states using the Vuex state management library
+* Write integration tests in ASP.NET Core using xUnit and FluentAssertions
+* Deploy your app to Microsoft Azure using the new GitHub Actions for continuous integration and continuous deployment (CI/CD)
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1800206690) today!
 
