@@ -58,6 +58,8 @@ namespace Travel.WebApi
             services.AddVersionedApiExplorer(options =>
             {
                 options.GroupNameFormat = "'v'VVV";
+                //fix for api version template
+                options.SubstituteApiVersionInUrl = true;
             });
         }
 
