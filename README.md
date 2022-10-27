@@ -78,3 +78,7 @@ Devlin enjoys tackling challenging projects or applications for high-level clien
 One of his other interests is giving talks at IT conferences worldwide and meeting unique people in the industry.
 Devlin is currently based in Oslo, Norway, with his wife. He is a senior software engineer at Inmeta Consulting Company, a subsidiary of the Crayon Group of Companies
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800206694">https://packt.link/free-ebook/9781800206694 </a> </p>
